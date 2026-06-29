@@ -21,6 +21,56 @@
 <!-- Favicon (emoji SVG fallback) -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚑</text></svg>">
 
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "EMBALMERS",
+  "description": "Layanan Ambulans dan Penanganan Jenazah Profesional 24 Jam — Jabodetabek, Luar Kota, Antar Provinsi",
+  "image": "https://embalmers.netlify.app/logo.png",
+  "telephone": "+628567643776",
+  "url": "https://embalmers.netlify.app",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ciracas",
+    "addressLocality": "Jakarta Timur",
+    "addressRegion": "DKI Jakarta",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.3339,
+    "longitude": 106.8694
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "priceRange": "Rp500.000 - Rp6.000.000",
+  "sameAs": [
+    "https://wa.me/628567643776",
+    "https://maps.app.goo.gl/5SfYCLvBjqPwB3k98"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Layanan Embalmers",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ambulans Jenazah Dalam Kota", "description": "Mulai Rp500.000"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ambulans Pasien Luar Kota", "description": "Mulai Rp1.000.000"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hiace Ambulans", "description": "Mulai Rp2.000.000"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Alphard Premium", "description": "Mulai Rp4.000.000"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Peti Jenazah", "description": "Rp1.700.000 - Rp6.000.000"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Formalin & Perawatan Jenazah", "description": "Layanan profesional"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pemandian & Makeup Jenazah", "description": "Layanan profesional"}
+      }
+    ]
+  }
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -243,6 +293,21 @@ color:white;
 .btn-submit:hover{background:#b8960f;}
 .form-note{text-align:center;margin-top:12px;color:#94a3b8;font-size:.85rem;}
 
+/* Map */
+.map-wrap{max-width:700px;margin:15px auto;}
+
+/* Proteksi */
+.proteksi{background:#f8fafc;}
+.proteksi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
+.proteksi-card{background:white;padding:30px;border-radius:18px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.08);position:relative;}
+.proteksi-card.recommended{border:2px solid #d4af37;box-shadow:0 10px 30px rgba(212,175,55,.2);}
+.proteksi-badge{background:#d4af37;color:#000;font-weight:700;font-size:.8rem;padding:6px 14px;border-radius:50px;position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;}
+.proteksi-tier{font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:10px;}
+.proteksi-harga{font-size:2rem;font-weight:800;color:#d4af37;margin-bottom:15px;}
+.proteksi-harga span{font-size:.9rem;font-weight:400;color:#94a3b8;}
+.proteksi-card ul{list-style:none;text-align:left;margin:15px 0 20px;}
+.proteksi-card ul li{padding:6px 0;color:#475569;font-size:.9rem;}
+
 /* Estimasi Harga */
 .estimator{background:#f1f5f9;}
 .estimator-wrap{max-width:600px;margin:0 auto;}
@@ -292,6 +357,7 @@ font-size:30px;
 <a href="#ambulans">Ambulans</a>
 <a href="#peti">Peti</a>
 <a href="#layanan">Layanan</a>
+<a href="#proteksi">Proteksi</a>
 <a href="#pesan">Pesan</a>
 <a href="#estimasi">Estimasi</a>
 <a href="#galeri">Galeri</a>
@@ -330,25 +396,25 @@ WhatsApp Darurat
 <div class="grid">
 
 <div class="card">
-<h3>🚑 Ambulans Pasien (Luar Kota)</h3>
+<h3><a href="ambulans-pasien/" style="color:inherit;text-decoration:none;">🚑 Ambulans Pasien (Luar Kota)</a></h3>
 <p class="price">Mulai Rp1.000.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20ambulans%20pasien%20luar%20kota" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
-<h3>🚑 Ambulans Jenazah (Dalam Kota)</h3>
+<h3><a href="ambulans-jenazah/" style="color:inherit;text-decoration:none;">🚑 Ambulans Jenazah (Dalam Kota)</a></h3>
 <p class="price">Mulai Rp500.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20ambulans%20jenazah%20dalam%20kota" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
-<h3>Hiace Ambulans</h3>
+<h3><a href="hiace-ambulans/" style="color:inherit;text-decoration:none;">Hiace Ambulans</a></h3>
 <p class="price">Mulai Rp2.000.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Hiace%20ambulans" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
-<h3>Alphard Premium</h3>
+<h3><a href="alphard-premium/" style="color:inherit;text-decoration:none;">Alphard Premium</a></h3>
 <p class="price">Mulai Rp4.000.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Alphard%20Premium" class="btn-cta">Pesan via WA</a>
 </div>
@@ -364,19 +430,19 @@ WhatsApp Darurat
 <div class="grid">
 
 <div class="card">
-<h3>Peti Gunung</h3>
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Gunung</a></h3>
 <p class="price">Rp1.700.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
-<h3>Peti Jumbo</h3>
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Jumbo</a></h3>
 <p class="price">Rp2.500.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Jumbo" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
-<h3>Peti Full Kaca Premium</h3>
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Full Kaca Premium</a></h3>
 <p class="price">Rp6.000.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Full%20Kaca%20Premium" class="btn-cta">Pesan via WA</a>
 </div>
@@ -417,6 +483,57 @@ WhatsApp Darurat
 
 </div>
 
+</section>
+
+<!-- PROTEKSI -->
+<section class="proteksi" id="proteksi">
+<h2 class="section-title">🛡️ Proteksi Kedukaan Berjangka</h2>
+<p style="text-align:center;max-width:700px;margin:0 auto 30px;color:#475569;">
+Siapkan perlindungan untuk keluarga Anda sejak dini. Dengan iuran terjangkau per bulan, Embalmers menjamin layanan kedukaan lengkap saat hari itu tiba — tanpa beban biaya mendadak.
+</p>
+<div class="proteksi-grid">
+
+<div class="proteksi-card">
+<div class="proteksi-tier">🥉 BASIC</div>
+<div class="proteksi-harga">Rp 35.000<span>/bulan</span></div>
+<ul>
+<li>✅ Ambulans Jenazah (Dalam Kota)</li>
+<li>✅ Peti Gunung</li>
+<li>✅ Pemandian Jenazah</li>
+<li>✅ Perlindungan hingga Rp 10 juta</li>
+</ul>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20tertarik%20dengan%20proteksi%20BASIC" class="btn-cta" style="background:#0f172a;color:#d4af37;">Daftar BASIC</a>
+</div>
+
+<div class="proteksi-card recommended">
+<div class="proteksi-badge">⭐ PALING POPULER</div>
+<div class="proteksi-tier">🥈 STANDARD</div>
+<div class="proteksi-harga">Rp 75.000<span>/bulan</span></div>
+<ul>
+<li>✅ Hiace Ambulans</li>
+<li>✅ Peti Jumbo</li>
+<li>✅ Formalin + Pemandian</li>
+<li>✅ Makeup Jenazah</li>
+<li>✅ Perlindungan hingga Rp 25 juta</li>
+</ul>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20tertarik%20dengan%20proteksi%20STANDARD" class="btn-cta">Daftar STANDARD</a>
+</div>
+
+<div class="proteksi-card">
+<div class="proteksi-tier">🥇 PREMIUM</div>
+<div class="proteksi-harga">Rp 150.000<span>/bulan</span></div>
+<ul>
+<li>✅ Alphard Premium</li>
+<li>✅ Peti Full Kaca Premium</li>
+<li>✅ Semua layanan perawatan</li>
+<li>✅ Antar Provinsi (s/d 500 km)</li>
+<li>✅ Perlindungan hingga Rp 50 juta</li>
+</ul>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20tertarik%20dengan%20proteksi%20PREMIUM" class="btn-cta" style="background:#0f172a;color:#d4af37;">Daftar PREMIUM</a>
+</div>
+
+</div>
+<p style="text-align:center;margin-top:25px;color:#94a3b8;font-size:.85rem;">* Pendaftaran usia 18–65 tahun. Premi tetap seumur hidup. Perlindungan aktif setelah 90 hari pertama.</p>
 </section>
 
 <section class="about">
@@ -520,6 +637,11 @@ Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan j
 <p class="total" id="est-total">Rp0</p>
 <p class="detail" id="est-breakdown"></p>
 </div>
+<p style="text-align:center;margin-top:15px;">
+<a href="https://www.google.com/maps/dir/Ciracas,+Jakarta+Timur/" target="_blank" class="btn-cta" style="background:#0f172a;color:#d4af37;width:auto;padding:12px 28px;" onclick="var d=document.getElementById('est-distance').value;this.href='https://www.google.com/maps/dir/Ciracas,+Jakarta+Timur//data=!3m1!4b1';return true;">
+🚗 Cek Rute via Google Maps
+</a>
+</p>
 </div>
 </div>
 </section>
@@ -578,10 +700,14 @@ Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan j
 <p>🚨 <strong>WA Darurat:</strong> 0822-9932-6654</p>
 <p>📍 <strong>Lokasi:</strong> Ciracas, Jakarta Timur</p>
 
+<div class="map-wrap">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8!2d106.8694!3d-6.3339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjAnMDIuMCJTIDEwNsKwNTInMDkuOCJF!5e0!3m2!1sid!2sid!4v1700000000000" width="100%" height="300" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
 <br>
 
 <a href="https://maps.app.goo.gl/5SfYCLvBjqPwB3k98" class="btn">
-Lihat Lokasi Kami
+📍 Lihat di Google Maps
 </a>
 
 </section>
