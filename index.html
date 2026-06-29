@@ -231,6 +231,27 @@ color:white;
 .legal ul{padding-left:20px;}
 .legal a{color:#d4af37;}
 
+/* Form Inquiry */
+.inquiry{background:white;text-align:center;}
+.form-wrap{max-width:600px;margin:0 auto;text-align:left;}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-weight:600;color:#0f172a;margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:10px;font-size:1rem;font-family:'Poppins',sans-serif;outline:none;transition:border-color .3s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#d4af37;}
+.form-group textarea{resize:vertical;min-height:100px;}
+.btn-submit{background:#d4af37;color:#000;border:none;padding:14px 32px;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;width:100%;}
+.btn-submit:hover{background:#b8960f;}
+.form-note{text-align:center;margin-top:12px;color:#94a3b8;font-size:.85rem;}
+
+/* Estimasi Harga */
+.estimator{background:#f1f5f9;}
+.estimator-wrap{max-width:600px;margin:0 auto;}
+.estimator-card{background:white;padding:30px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08);}
+.estimator-result{background:#0f172a;color:#d4af37;padding:20px;border-radius:12px;text-align:center;margin-top:20px;display:none;}
+.estimator-result.show{display:block;}
+.estimator-result .total{font-size:2rem;font-weight:800;}
+.estimator-result .detail{color:#cbd5e1;font-size:.9rem;margin-top:5px;}
+
 @media(max-width:768px){
 
 header{
@@ -271,6 +292,8 @@ font-size:30px;
 <a href="#ambulans">Ambulans</a>
 <a href="#peti">Peti</a>
 <a href="#layanan">Layanan</a>
+<a href="#pesan">Pesan</a>
+<a href="#estimasi">Estimasi</a>
 <a href="#galeri">Galeri</a>
 <a href="#faq">FAQ</a>
 <a href="#kontak">Kontak</a>
@@ -343,16 +366,19 @@ WhatsApp Darurat
 <div class="card">
 <h3>Peti Gunung</h3>
 <p class="price">Rp1.700.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
 <h3>Peti Jumbo</h3>
 <p class="price">Rp2.500.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Jumbo" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
 <h3>Peti Full Kaca Premium</h3>
 <p class="price">Rp6.000.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Full%20Kaca%20Premium" class="btn-cta">Pesan via WA</a>
 </div>
 
 </div>
@@ -368,21 +394,25 @@ WhatsApp Darurat
 <div class="card">
 <h3>⚕️ Formalin Jenazah</h3>
 <p>Pelayanan formalin profesional dengan prosedur yang tepat.</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20layanan%20Formalin%20Jenazah" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
 <h3>🕊️ Pemandian Jenazah</h3>
 <p>Dilakukan dengan penuh penghormatan dan profesional.</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20layanan%20Pemandian%20Jenazah" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
 <h3>💄 Makeup Jenazah</h3>
 <p>Tata rias jenazah yang rapi dan layak.</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20layanan%20Makeup%20Jenazah" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
 <h3>🚐 Jabodetabek & Antar Provinsi</h3>
 <p>Melayani perjalanan dalam dan luar kota ke seluruh Indonesia.</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20layanan%20Antar%20Provinsi" class="btn-cta">Pesan via WA</a>
 </div>
 
 </div>
@@ -425,6 +455,72 @@ Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan j
 <div class="relation">Keluarga Duka — Depok</div>
 </div>
 
+</div>
+</section>
+
+<!-- FORM INQUIRY -->
+<section class="inquiry" id="pesan">
+<h2 class="section-title">📝 Form Pemesanan Cepat</h2>
+<div class="form-wrap">
+<div class="form-group">
+<label>Nama Lengkap</label>
+<input type="text" id="inq-name" placeholder="Nama Anda" required>
+</div>
+<div class="form-group">
+<label>Nomor WhatsApp</label>
+<input type="tel" id="inq-phone" placeholder="0812-xxxx-xxxx" required>
+</div>
+<div class="form-group">
+<label>Jenis Layanan</label>
+<select id="inq-service" required>
+<option value="">— Pilih Layanan —</option>
+<option>Ambulans Pasien (Luar Kota)</option>
+<option>Ambulans Jenazah (Dalam Kota)</option>
+<option>Hiace Ambulans</option>
+<option>Alphard Premium</option>
+<option>Peti Jenazah</option>
+<option>Formalin / Pemandian / Makeup</option>
+<option>Antar Provinsi</option>
+<option>Lainnya</option>
+</select>
+</div>
+<div class="form-group">
+<label>Alamat Penjemputan / Detail</label>
+<textarea id="inq-msg" placeholder="Tulis alamat lengkap dan kebutuhan Anda..." required></textarea>
+</div>
+<button class="btn-submit" onclick="submitInquiry()">🚀 Kirim via WhatsApp</button>
+<p class="form-note">Form ini akan membuka WhatsApp dengan pesan otomatis. Data Anda aman dan tidak disimpan.</p>
+</div>
+</section>
+
+<!-- ESTIMASI HARGA -->
+<section class="estimator" id="estimasi">
+<h2 class="section-title">💰 Estimasi Harga</h2>
+<div class="estimator-wrap">
+<div class="estimator-card">
+<div class="form-group">
+<label>Jenis Layanan</label>
+<select id="est-service" onchange="hitungEstimasi()">
+<option value="">— Pilih —</option>
+<option value="500000">Ambulans Jenazah Dalam Kota</option>
+<option value="1000000">Ambulans Pasien Luar Kota</option>
+<option value="1500000">Hiace Ambulans</option>
+<option value="2500000">Alphard Premium</option>
+<option value="1700000">Peti Gunung</option>
+<option value="2500000">Peti Jumbo</option>
+<option value="6000000">Peti Full Kaca Premium</option>
+</select>
+</div>
+<div class="form-group">
+<label>Estimasi Jarak (km)</label>
+<input type="number" id="est-distance" placeholder="Contoh: 30" min="0" onchange="hitungEstimasi()">
+</div>
+<div class="estimator-result" id="est-result">
+<p class="detail">Estimasi Total Biaya</p>
+<p class="total" id="est-total">Rp0</p>
+<p class="detail" id="est-breakdown"></p>
+</div>
+</div>
 </div>
 </section>
 
@@ -525,6 +621,40 @@ Lihat Lokasi Kami
 <a href="https://wa.me/628567643776" class="whatsapp">
 💬
 </a>
+
+<script>
+// Form Inquiry → WhatsApp
+function submitInquiry(){
+  var n=document.getElementById('inq-name').value.trim();
+  var p=document.getElementById('inq-phone').value.trim();
+  var s=document.getElementById('inq-service').value;
+  var m=document.getElementById('inq-msg').value.trim();
+  if(!n||!p||!s||!m){alert('Mohon isi semua field.');return;}
+  var txt='Halo Embalmers,%0A%0A'+
+    'Nama: '+encodeURIComponent(n)+'%0A'+
+    'No WA: '+encodeURIComponent(p)+'%0A'+
+    'Layanan: '+encodeURIComponent(s)+'%0A'+
+    'Detail: '+encodeURIComponent(m)+'%0A%0A'+
+    'Mohon info ketersediaan dan estimasi biaya. Terima kasih.';
+  window.open('https://wa.me/628567643776?text='+txt,'_blank');
+}
+
+// Estimasi Harga
+function hitungEstimasi(){
+  var svc=document.getElementById('est-service').value;
+  var dist=parseInt(document.getElementById('est-distance').value)||0;
+  var result=document.getElementById('est-result');
+  var total=document.getElementById('est-total');
+  var breakdown=document.getElementById('est-breakdown');
+  if(!svc){result.classList.remove('show');return;}
+  var base=parseInt(svc);
+  var kmCost=dist>50?dist*5000:dist*3000;
+  var grand=base+kmCost;
+  total.textContent='Rp'+grand.toLocaleString('id-ID');
+  breakdown.textContent='Biaya dasar Rp'+base.toLocaleString('id-ID')+' + jarak '+dist+' km (Rp'+(dist>50?5000:3000)+'/km) = Rp'+kmCost.toLocaleString('id-ID');
+  result.classList.add('show');
+}
+</script>
 
 </body>
 </html>
