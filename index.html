@@ -317,6 +317,63 @@ color:white;
 .estimator-result .total{font-size:2rem;font-weight:800;}
 .estimator-result .detail{color:#cbd5e1;font-size:.9rem;margin-top:5px;}
 
+
+/* Stats Bar */
+.stats-bar{background:white;padding:30px 8%;box-shadow:0 4px 20px rgba(0,0,0,.06);}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;max-width:900px;margin:0 auto;}
+.stat-item{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.stat-icon{font-size:2rem;}
+.stat-num{font-size:1.8rem;font-weight:800;color:#0f172a;}
+.stat-label{font-size:.85rem;color:#64748b;font-weight:500;}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* Card v2 */
+.card{padding:0;border-radius:18px;overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.12);}
+.card-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.card-thumb.a1{background:linear-gradient(135deg,#1e3a5f,#2d5a87);}
+.card-thumb.a2{background:linear-gradient(135deg,#2d5a87,#1e3a5f);}
+.card-thumb.a3{background:linear-gradient(135deg,#0f172a,#334155);}
+.card-thumb.a4{background:linear-gradient(135deg,#1a1a2e,#16213e);}
+.card-thumb.p1{background:linear-gradient(135deg,#3e2723,#5d4037);}
+.card-thumb.p2{background:linear-gradient(135deg,#5d4037,#3e2723);}
+.card-thumb.p3{background:linear-gradient(135deg,#1b0000,#3e0000);}
+.card-thumb.l1{background:linear-gradient(135deg,#1a3a2a,#2d5a3f);}
+.card-thumb.l2{background:linear-gradient(135deg,#0f172a,#1e3a5f);}
+.card-thumb.l3{background:linear-gradient(135deg,#2a1a3a,#4a2d5a);}
+.card-thumb.l4{background:linear-gradient(135deg,#1a2a3a,#2a4a5a);}
+.card-body{padding:20px;}
+.card-body h3{margin-bottom:8px;font-size:1rem;}
+.card-body .price{font-size:1.2rem;}
+.card-body .btn-cta{margin-top:10px;}
+
+/* Wave Divider */
+.wave{position:relative;height:60px;overflow:hidden;}
+.wave svg{position:absolute;bottom:0;width:100%;height:60px;}
+.wave-top svg{top:0;bottom:auto;transform:rotate(180deg);}
+
+/* Trust Badges */
+.trust-badges{background:white;padding:40px 8%;text-align:center;}
+.trust-badges p{color:#94a3b8;font-size:.9rem;margin-bottom:20px;}
+.badge-grid{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;}
+.badge-item{height:50px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#cbd5e1;font-size:1.1rem;letter-spacing:1px;border:2px dashed #e2e8f0;border-radius:10px;padding:10px 24px;}
+
+/* Testimoni v2 */
+.testi{background:#f1f5f9;text-align:center;}
+.testi-card{padding:30px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.06);position:relative;}
+.testi-card .avatar{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 15px;}
+.testi-card .avatar.a1{background:#d4af37;color:#000;}
+.testi-card .avatar.a2{background:#0f172a;color:#d4af37;}
+.testi-card .avatar.a3{background:#1e3a5f;color:#fff;}
+.testi-rating{display:flex;justify-content:center;gap:20px;align-items:center;margin-bottom:10px;}
+.testi-stars{color:#f59e0b;font-size:1.1rem;}
+.testi-badge{background:#f1f5f9;color:#64748b;font-size:.75rem;padding:3px 10px;border-radius:50px;font-weight:600;}
+.testi-card .quote{font-style:italic;color:#475569;line-height:1.7;margin-bottom:15px;}
+.testi-card .author{font-weight:700;color:#0f172a;}
+
+/* Proteksi v2 */
+.proteksi-card .proteksi-icon{font-size:3.5rem;margin-bottom:10px;}
+
 @media(max-width:768px){
 
 header{
@@ -389,6 +446,16 @@ WhatsApp Darurat
 
 </section>
 
+<!-- STATS BAR -->
+<section class="stats-bar">
+<div class="stats-grid">
+<div class="stat-item"><span class="stat-icon">✅</span><span class="stat-num">500+</span><span class="stat-label">Keluarga Terbantu</span></div>
+<div class="stat-item"><span class="stat-icon">⏱️</span><span class="stat-num">15 Menit</span><span class="stat-label">Respons Darurat</span></div>
+<div class="stat-item"><span class="stat-icon">⭐</span><span class="stat-num">4.9 / 5.0</span><span class="stat-label">Google Review</span></div>
+<div class="stat-item"><span class="stat-icon">🚑</span><span class="stat-num">24 Jam</span><span class="stat-label">Siaga Nonstop</span></div>
+</div>
+</section>
+
 <section id="ambulans">
 
 <h2 class="section-title">🚑 Katalog Ambulans</h2>
@@ -396,28 +463,36 @@ WhatsApp Darurat
 <div class="grid">
 
 <div class="card">
-<h3><a href="ambulans-pasien/" style="color:inherit;text-decoration:none;">🚑 Ambulans Pasien (Luar Kota)</a></h3>
+<div class="card-thumb a1">🚑</div>
+<div class="card-body">
+<h3><a href="ambulans-pasien/" style="color:inherit;text-decoration:none;">Ambulans Pasien (Luar Kota)</a></h3>
 <p class="price">Mulai Rp1.000.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20ambulans%20pasien%20luar%20kota" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 <div class="card">
-<h3><a href="ambulans-jenazah/" style="color:inherit;text-decoration:none;">🚑 Ambulans Jenazah (Dalam Kota)</a></h3>
+<div class="card-thumb a2">🚑</div>
+<div class="card-body">
+<h3><a href="ambulans-jenazah/" style="color:inherit;text-decoration:none;">Ambulans Jenazah (Dalam Kota)</a></h3>
 <p class="price">Mulai Rp500.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20ambulans%20jenazah%20dalam%20kota" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 <div class="card">
+<div class="card-thumb a3">🚐</div>
+<div class="card-body">
 <h3><a href="hiace-ambulans/" style="color:inherit;text-decoration:none;">Hiace Ambulans</a></h3>
 <p class="price">Mulai Rp2.000.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Hiace%20ambulans" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 <div class="card">
+<div class="card-thumb a4">🚗</div>
+<div class="card-body">
 <h3><a href="alphard-premium/" style="color:inherit;text-decoration:none;">Alphard Premium</a></h3>
 <p class="price">Mulai Rp4.000.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Alphard%20Premium" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 </div>
 
@@ -430,21 +505,29 @@ WhatsApp Darurat
 <div class="grid">
 
 <div class="card">
+<div class="card-thumb p1">⚰️</div>
+<div class="card-body">
 <h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Gunung</a></h3>
 <p class="price">Rp1.700.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 <div class="card">
+<div class="card-thumb p2">⚰️</div>
+<div class="card-body">
 <h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Jumbo</a></h3>
 <p class="price">Rp2.500.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Jumbo" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 <div class="card">
+<div class="card-thumb p3">🪦</div>
+<div class="card-body">
 <h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Full Kaca Premium</a></h3>
 <p class="price">Rp6.000.000</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Full%20Kaca%20Premium" class="btn-cta">Pesan via WA</a>
+</div></div>
+
 </div>
 
 </div>
@@ -458,31 +541,52 @@ WhatsApp Darurat
 <div class="grid">
 
 <div class="card">
-<h3>⚕️ Formalin Jenazah</h3>
+<div class="card-thumb l1">⚕️</div>
+<div class="card-body">
+<h3>Formalin Jenazah</h3>
 <p>Pelayanan formalin profesional dengan prosedur yang tepat.</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20layanan%20Formalin%20Jenazah" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 <div class="card">
-<h3>🕊️ Pemandian Jenazah</h3>
+<div class="card-thumb l2">🕊️</div>
+<div class="card-body">
+<h3>Pemandian Jenazah</h3>
 <p>Dilakukan dengan penuh penghormatan dan profesional.</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20layanan%20Pemandian%20Jenazah" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 <div class="card">
-<h3>💄 Makeup Jenazah</h3>
+<div class="card-thumb l3">💄</div>
+<div class="card-body">
+<h3>Makeup Jenazah</h3>
 <p>Tata rias jenazah yang rapi dan layak.</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20layanan%20Makeup%20Jenazah" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 <div class="card">
-<h3>🚐 Jabodetabek & Antar Provinsi</h3>
+<div class="card-thumb l4">🚐</div>
+<div class="card-body">
+<h3>Jabodetabek & Antar Provinsi</h3>
 <p>Melayani perjalanan dalam dan luar kota ke seluruh Indonesia.</p>
 <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20layanan%20Antar%20Provinsi" class="btn-cta">Pesan via WA</a>
-</div>
+</div></div>
 
 </div>
 
+</div>
+
+</section>
+
+<!-- TRUST BADGES -->
+<section class="trust-badges">
+<p>Dipercaya oleh</p>
+<div class="badge-grid">
+<div class="badge-item">🏥 RS Premier</div>
+<div class="badge-item">🕌 DKM Jakarta</div>
+<div class="badge-item">🏛️ Pemda DKI</div>
+<div class="badge-item">🤝 Asuransi Partner</div>
+</div>
 </section>
 
 <!-- PROTEKSI -->
@@ -495,6 +599,7 @@ Siapkan perlindungan untuk keluarga Anda sejak dini. Dengan iuran terjangkau per
 
 <div class="proteksi-card">
 <div class="proteksi-tier">🥉 BASIC</div>
+<div class="proteksi-icon">🛡️</div>
 <div class="proteksi-harga">Rp 35.000<span>/bulan</span></div>
 <ul>
 <li>✅ Ambulans Jenazah (Dalam Kota)</li>
@@ -508,6 +613,7 @@ Siapkan perlindungan untuk keluarga Anda sejak dini. Dengan iuran terjangkau per
 <div class="proteksi-card recommended">
 <div class="proteksi-badge">⭐ PALING POPULER</div>
 <div class="proteksi-tier">🥈 STANDARD</div>
+<div class="proteksi-icon">⭐</div>
 <div class="proteksi-harga">Rp 75.000<span>/bulan</span></div>
 <ul>
 <li>✅ Hiace Ambulans</li>
@@ -521,6 +627,7 @@ Siapkan perlindungan untuk keluarga Anda sejak dini. Dengan iuran terjangkau per
 
 <div class="proteksi-card">
 <div class="proteksi-tier">🥇 PREMIUM</div>
+<div class="proteksi-icon">👑</div>
 <div class="proteksi-harga">Rp 150.000<span>/bulan</span></div>
 <ul>
 <li>✅ Alphard Premium</li>
@@ -552,22 +659,25 @@ Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan j
 <div class="testi-grid">
 
 <div class="testi-card">
-<div class="stars">★★★★★</div>
-<p class="quote">"Respon cepat, petugasnya profesional. Ambulans tiba 30 menit setelah telepon. Penanganan jenazah sangat sopan dan sesuai syariat. Terima kasih Embalmers."</p>
+<div class="avatar a1">AF</div>
+<div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+<p class="quote">"Respon cepat, petugasnya profesional. Ambulans tiba 30 menit setelah telepon. Penanganan jenazah sangat sopan dan sesuai syariat."</p>
 <div class="author">Bapak Ahmad F.</div>
 <div class="relation">Keluarga Pasien — Jakarta Timur</div>
 </div>
 
 <div class="testi-card">
-<div class="stars">★★★★★</div>
-<p class="quote">"Jarak jauh Jakarta-Semarang diantar dengan aman. Supir ramah, mobil bersih, harga sesuai yang dijanjikan tanpa biaya tambahan. Recommended!"</p>
+<div class="avatar a2">RS</div>
+<div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+<p class="quote">"Jarak jauh Jakarta-Semarang diantar aman. Supir ramah, mobil bersih, harga sesuai tanpa biaya tambahan. Recommended!"</p>
 <div class="author">Ibu Rina S.</div>
 <div class="relation">Keluarga Pasien — Semarang</div>
 </div>
 
 <div class="testi-card">
-<div class="stars">★★★★★</div>
-<p class="quote">"Pemesanan peti Full Kaca Premium sangat memuaskan. Kualitas bagus, pengiriman tepat waktu, dan konsultasi pemilihan peti sangat helpful."</p>
+<div class="avatar a3">HW</div>
+<div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+<p class="quote">"Pemesanan peti Full Kaca Premium sangat memuaskan. Kualitas bagus, pengiriman tepat waktu, konsultasi helpful."</p>
 <div class="author">Bapak Hendra W.</div>
 <div class="relation">Keluarga Duka — Depok</div>
 </div>
