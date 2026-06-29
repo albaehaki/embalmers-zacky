@@ -248,6 +248,27 @@ color:white;
 }
 .whatsapp:hover{transform:scale(1.1);box-shadow:0 5px 20px rgba(37,211,102,.4);}
 
+/* Cards */
+.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.12);}
+.card-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
+.card-thumb.a1{background:linear-gradient(135deg,#1e3a5f,#2d5a87);}
+.card-thumb.a2{background:linear-gradient(135deg,#2d5a87,#1e3a5f);}
+.card-thumb.a3{background:linear-gradient(135deg,#0f172a,#334155);}
+.card-thumb.a4{background:linear-gradient(135deg,#1a1a2e,#16213e);}
+.card-thumb.p1{background:linear-gradient(135deg,#3e2723,#5d4037);}
+.card-thumb.p2{background:linear-gradient(135deg,#5d4037,#3e2723);}
+.card-thumb.p3{background:linear-gradient(135deg,#1b0000,#3e0000);}
+.card-thumb.l1{background:linear-gradient(135deg,#1a3a2a,#2d5a3f);}
+.card-thumb.l2{background:linear-gradient(135deg,#0f172a,#1e3a5f);}
+.card-thumb.l3{background:linear-gradient(135deg,#2a1a3a,#4a2d5a);}
+.card-thumb.l4{background:linear-gradient(135deg,#1a2a3a,#2a4a5a);}
+.card-body{padding:20px;}
+.card-body h3{margin-bottom:8px;font-size:1rem;}
+.price{font-weight:700;color:#d4af37;margin-bottom:12px;}
+.btn-cta{display:inline-block;background:#0f172a;color:#d4af37;padding:10px 22px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;}
+.btn-cta:hover{background:#d4af37;color:#000;}
+
 /* Testimonial */
 .testi{background:#f1f5f9;text-align:center;}
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;text-align:left;}
@@ -255,7 +276,8 @@ color:white;
 .testi-card .stars{color:#f59e0b;font-size:1.1rem;margin-bottom:8px;}
 .testi-card .quote{font-style:italic;color:#475569;margin-bottom:10px;line-height:1.7;}
 .testi-card .author{font-weight:700;color:#0f172a;}
-.testi-card .relation{font-size:.85rem;color:#94a3b8;}
+
+@media(max-width:768px){
 
 /* FAQ */
 .faq{background:white;}
@@ -273,14 +295,6 @@ color:white;
 .galeri-item .img-placeholder{height:200px;background:linear-gradient(135deg,#0f172a,#1e293b);display:flex;align-items:center;justify-content:center;font-size:3rem;color:#d4af37;}
 .galeri-item p{padding:12px;font-weight:600;color:#0f172a;}
 
-/* Legal */
-.legal{background:#0f172a;color:white;padding:40px 8%;}
-.legal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
-.legal h4{color:#d4af37;margin-bottom:10px;}
-.legal p,.legal ul{color:#cbd5e1;font-size:.9rem;line-height:1.7;}
-.legal ul{padding-left:20px;}
-.legal a{color:#d4af37;}
-
 /* Form Inquiry */
 .inquiry{background:white;text-align:center;}
 .form-wrap{max-width:600px;margin:0 auto;text-align:left;}
@@ -296,68 +310,6 @@ color:white;
 /* Map */
 .map-wrap{max-width:700px;margin:15px auto;}
 
-/* Proteksi */
-.proteksi{background:#f8fafc;}
-.proteksi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;}
-.proteksi-card{background:white;padding:30px;border-radius:18px;text-align:center;box-shadow:0 10px 25px rgba(0,0,0,.08);position:relative;}
-.proteksi-card.recommended{border:2px solid #d4af37;box-shadow:0 10px 30px rgba(212,175,55,.2);}
-.proteksi-badge{background:#d4af37;color:#000;font-weight:700;font-size:.8rem;padding:6px 14px;border-radius:50px;position:absolute;top:-13px;left:50%;transform:translateX(-50%);white-space:nowrap;}
-.proteksi-tier{font-size:1.1rem;font-weight:700;color:#0f172a;margin-bottom:10px;}
-.proteksi-harga{font-size:2rem;font-weight:800;color:#d4af37;margin-bottom:15px;}
-.proteksi-harga span{font-size:.9rem;font-weight:400;color:#94a3b8;}
-.proteksi-card ul{list-style:none;text-align:left;margin:15px 0 20px;}
-.proteksi-card ul li{padding:6px 0;color:#475569;font-size:.9rem;}
-
-/* Estimasi Harga */
-.estimator{background:#f1f5f9;}
-.estimator-wrap{max-width:600px;margin:0 auto;}
-.estimator-card{background:white;padding:30px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08);}
-.estimator-result{background:#0f172a;color:#d4af37;padding:20px;border-radius:12px;text-align:center;margin-top:20px;display:none;}
-.estimator-result.show{display:block;}
-.estimator-result .total{font-size:2rem;font-weight:800;}
-.estimator-result .detail{color:#cbd5e1;font-size:.9rem;margin-top:5px;}
-
-
-/* Stats Bar */
-.stats-bar{background:white;padding:30px 8%;box-shadow:0 4px 20px rgba(0,0,0,.06);}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;max-width:900px;margin:0 auto;}
-.stat-item{display:flex;flex-direction:column;align-items:center;gap:8px;}
-.stat-icon{font-size:2rem;}
-.stat-num{font-size:1.8rem;font-weight:800;color:#0f172a;}
-.stat-label{font-size:.85rem;color:#64748b;font-weight:500;}
-@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
-
-/* Card v2 */
-.card{padding:0;border-radius:18px;overflow:hidden;transition:transform .3s,box-shadow .3s;}
-.card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.12);}
-.card-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem;}
-.card-thumb.a1{background:linear-gradient(135deg,#1e3a5f,#2d5a87);}
-.card-thumb.a2{background:linear-gradient(135deg,#2d5a87,#1e3a5f);}
-.card-thumb.a3{background:linear-gradient(135deg,#0f172a,#334155);}
-.card-thumb.a4{background:linear-gradient(135deg,#1a1a2e,#16213e);}
-.card-thumb.p1{background:linear-gradient(135deg,#3e2723,#5d4037);}
-.card-thumb.p2{background:linear-gradient(135deg,#5d4037,#3e2723);}
-.card-thumb.p3{background:linear-gradient(135deg,#1b0000,#3e0000);}
-.card-thumb.l1{background:linear-gradient(135deg,#1a3a2a,#2d5a3f);}
-.card-thumb.l2{background:linear-gradient(135deg,#0f172a,#1e3a5f);}
-.card-thumb.l3{background:linear-gradient(135deg,#2a1a3a,#4a2d5a);}
-.card-thumb.l4{background:linear-gradient(135deg,#1a2a3a,#2a4a5a);}
-.card-body{padding:20px;}
-.card-body h3{margin-bottom:8px;font-size:1rem;}
-.card-body .price{font-size:1.2rem;}
-.card-body .btn-cta{margin-top:10px;}
-
-/* Wave Divider */
-.wave{position:relative;height:60px;overflow:hidden;}
-.wave svg{position:absolute;bottom:0;width:100%;height:60px;}
-.wave-top svg{top:0;bottom:auto;transform:rotate(180deg);}
-
-/* Trust Badges */
-.trust-badges{background:white;padding:40px 8%;text-align:center;}
-.trust-badges p{color:#94a3b8;font-size:.9rem;margin-bottom:20px;}
-.badge-grid{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;}
-.badge-item{height:50px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#cbd5e1;font-size:1.1rem;letter-spacing:1px;border:2px dashed #e2e8f0;border-radius:10px;padding:10px 24px;}
-
 /* Testimoni v2 */
 .testi{background:#f1f5f9;text-align:center;}
 .testi-card{padding:30px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.06);position:relative;}
@@ -370,9 +322,6 @@ color:white;
 .testi-badge{background:#f1f5f9;color:#64748b;font-size:.75rem;padding:3px 10px;border-radius:50px;font-weight:600;}
 .testi-card .quote{font-style:italic;color:#475569;line-height:1.7;margin-bottom:15px;}
 .testi-card .author{font-weight:700;color:#0f172a;}
-
-/* Proteksi v2 */
-.proteksi-card .proteksi-icon{font-size:3.5rem;margin-bottom:10px;}
 
 @media(max-width:768px){
 
@@ -414,9 +363,7 @@ font-size:30px;
 <a href="#ambulans">Ambulans</a>
 <a href="#peti">Peti</a>
 <a href="#layanan">Layanan</a>
-<a href="#proteksi">Proteksi</a>
 <a href="#pesan">Pesan</a>
-<a href="#estimasi">Estimasi</a>
 <a href="#galeri">Galeri</a>
 <a href="#faq">FAQ</a>
 <a href="#kontak">Kontak</a>
@@ -498,42 +445,6 @@ WhatsApp Darurat
 
 </section>
 
-<section id="peti">
-
-<h2 class="section-title">⚰️ Katalog Peti Jenazah</h2>
-
-<div class="grid">
-
-<div class="card">
-<div class="card-thumb p1">⚰️</div>
-<div class="card-body">
-<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Gunung</a></h3>
-<p class="price">Rp1.700.000</p>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung" class="btn-cta">Pesan via WA</a>
-</div></div>
-
-<div class="card">
-<div class="card-thumb p2">⚰️</div>
-<div class="card-body">
-<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Jumbo</a></h3>
-<p class="price">Rp2.500.000</p>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Jumbo" class="btn-cta">Pesan via WA</a>
-</div></div>
-
-<div class="card">
-<div class="card-thumb p3">🪦</div>
-<div class="card-body">
-<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Full Kaca Premium</a></h3>
-<p class="price">Rp6.000.000</p>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Full%20Kaca%20Premium" class="btn-cta">Pesan via WA</a>
-</div></div>
-
-</div>
-
-</div>
-
-</section>
-
 <section id="layanan">
 
 <h2 class="section-title">🕊️ Layanan Kami</h2>
@@ -574,76 +485,48 @@ WhatsApp Darurat
 
 </div>
 
+</section>
+
+<section id="peti">
+
+<h2 class="section-title">⚰️ Katalog Peti Jenazah</h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-thumb p1">⚰️</div>
+<div class="card-body">
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Gunung</a></h3>
+<p class="price">Rp1.700.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung" class="btn-cta">Pesan via WA</a>
+</div></div>
+
+<div class="card">
+<div class="card-thumb p2">⚰️</div>
+<div class="card-body">
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Jumbo</a></h3>
+<p class="price">Rp2.500.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Jumbo" class="btn-cta">Pesan via WA</a>
+</div></div>
+
+<div class="card">
+<div class="card-thumb p3">🪦</div>
+<div class="card-body">
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Full Kaca Premium</a></h3>
+<p class="price">Rp6.000.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Full%20Kaca%20Premium" class="btn-cta">Pesan via WA</a>
+</div></div>
+
+</div>
+
 </div>
 
 </section>
+
+
 
 <!-- TRUST BADGES -->
-<section class="trust-badges">
-<p>Dipercaya oleh</p>
-<div class="badge-grid">
-<div class="badge-item">🏥 RS Premier</div>
-<div class="badge-item">🕌 DKM Jakarta</div>
-<div class="badge-item">🏛️ Pemda DKI</div>
-<div class="badge-item">🤝 Asuransi Partner</div>
-</div>
-</section>
-
-<!-- PROTEKSI -->
-<section class="proteksi" id="proteksi">
-<h2 class="section-title">🛡️ Proteksi Kedukaan Berjangka</h2>
-<p style="text-align:center;max-width:700px;margin:0 auto 30px;color:#475569;">
-Siapkan perlindungan untuk keluarga Anda sejak dini. Dengan iuran terjangkau per bulan, Embalmers menjamin layanan kedukaan lengkap saat hari itu tiba — tanpa beban biaya mendadak.
-</p>
-<div class="proteksi-grid">
-
-<div class="proteksi-card">
-<div class="proteksi-tier">🥉 BASIC</div>
-<div class="proteksi-icon">🛡️</div>
-<div class="proteksi-harga">Rp 35.000<span>/bulan</span></div>
-<ul>
-<li>✅ Ambulans Jenazah (Dalam Kota)</li>
-<li>✅ Peti Gunung</li>
-<li>✅ Pemandian Jenazah</li>
-<li>✅ Perlindungan hingga Rp 10 juta</li>
-</ul>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20tertarik%20dengan%20proteksi%20BASIC" class="btn-cta" style="background:#0f172a;color:#d4af37;">Daftar BASIC</a>
-</div>
-
-<div class="proteksi-card recommended">
-<div class="proteksi-badge">⭐ PALING POPULER</div>
-<div class="proteksi-tier">🥈 STANDARD</div>
-<div class="proteksi-icon">⭐</div>
-<div class="proteksi-harga">Rp 75.000<span>/bulan</span></div>
-<ul>
-<li>✅ Hiace Ambulans</li>
-<li>✅ Peti Jumbo</li>
-<li>✅ Formalin + Pemandian</li>
-<li>✅ Makeup Jenazah</li>
-<li>✅ Perlindungan hingga Rp 25 juta</li>
-</ul>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20tertarik%20dengan%20proteksi%20STANDARD" class="btn-cta">Daftar STANDARD</a>
-</div>
-
-<div class="proteksi-card">
-<div class="proteksi-tier">🥇 PREMIUM</div>
-<div class="proteksi-icon">👑</div>
-<div class="proteksi-harga">Rp 150.000<span>/bulan</span></div>
-<ul>
-<li>✅ Alphard Premium</li>
-<li>✅ Peti Full Kaca Premium</li>
-<li>✅ Semua layanan perawatan</li>
-<li>✅ Antar Provinsi (s/d 500 km)</li>
-<li>✅ Perlindungan hingga Rp 50 juta</li>
-</ul>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20tertarik%20dengan%20proteksi%20PREMIUM" class="btn-cta" style="background:#0f172a;color:#d4af37;">Daftar PREMIUM</a>
-</div>
-
-</div>
-<p style="text-align:center;margin-top:25px;color:#94a3b8;font-size:.85rem;">* Pendaftaran usia 18–65 tahun. Premi tetap seumur hidup. Perlindungan aktif setelah 90 hari pertama.</p>
-</section>
-
-<section class="about">
+class="about">
 
 <h2 class="section-title">Tentang Embalmers</h2>
 
@@ -686,76 +569,6 @@ Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan j
 </section>
 
 <!-- FORM INQUIRY -->
-<section class="inquiry" id="pesan">
-<h2 class="section-title">📝 Form Pemesanan Cepat</h2>
-<div class="form-wrap">
-<div class="form-group">
-<label>Nama Lengkap</label>
-<input type="text" id="inq-name" placeholder="Nama Anda" required>
-</div>
-<div class="form-group">
-<label>Nomor WhatsApp</label>
-<input type="tel" id="inq-phone" placeholder="0812-xxxx-xxxx" required>
-</div>
-<div class="form-group">
-<label>Jenis Layanan</label>
-<select id="inq-service" required>
-<option value="">— Pilih Layanan —</option>
-<option>Ambulans Pasien (Luar Kota)</option>
-<option>Ambulans Jenazah (Dalam Kota)</option>
-<option>Hiace Ambulans</option>
-<option>Alphard Premium</option>
-<option>Peti Jenazah</option>
-<option>Formalin / Pemandian / Makeup</option>
-<option>Antar Provinsi</option>
-<option>Lainnya</option>
-</select>
-</div>
-<div class="form-group">
-<label>Alamat Penjemputan / Detail</label>
-<textarea id="inq-msg" placeholder="Tulis alamat lengkap dan kebutuhan Anda..." required></textarea>
-</div>
-<button class="btn-submit" onclick="submitInquiry()">🚀 Kirim via WhatsApp</button>
-<p class="form-note">Form ini akan membuka WhatsApp dengan pesan otomatis. Data Anda aman dan tidak disimpan.</p>
-</div>
-</section>
-
-<!-- ESTIMASI HARGA -->
-<section class="estimator" id="estimasi">
-<h2 class="section-title">💰 Estimasi Harga</h2>
-<div class="estimator-wrap">
-<div class="estimator-card">
-<div class="form-group">
-<label>Jenis Layanan</label>
-<select id="est-service" onchange="hitungEstimasi()">
-<option value="">— Pilih —</option>
-<option value="500000">Ambulans Jenazah Dalam Kota</option>
-<option value="1000000">Ambulans Pasien Luar Kota</option>
-<option value="1500000">Hiace Ambulans</option>
-<option value="2500000">Alphard Premium</option>
-<option value="1700000">Peti Gunung</option>
-<option value="2500000">Peti Jumbo</option>
-<option value="6000000">Peti Full Kaca Premium</option>
-</select>
-</div>
-<div class="form-group">
-<label>Estimasi Jarak (km)</label>
-<input type="number" id="est-distance" placeholder="Contoh: 30" min="0" onchange="hitungEstimasi()">
-</div>
-<div class="estimator-result" id="est-result">
-<p class="detail">Estimasi Total Biaya</p>
-<p class="total" id="est-total">Rp0</p>
-<p class="detail" id="est-breakdown"></p>
-</div>
-<p style="text-align:center;margin-top:15px;">
-<a href="https://www.google.com/maps/dir/Ciracas,+Jakarta+Timur/" target="_blank" class="btn-cta" style="background:#0f172a;color:#d4af37;width:auto;padding:12px 28px;" onclick="var d=document.getElementById('est-distance').value;this.href='https://www.google.com/maps/dir/Ciracas,+Jakarta+Timur//data=!3m1!4b1';return true;">
-🚗 Cek Rute via Google Maps
-</a>
-</p>
-</div>
-</div>
-</section>
-
 <!-- GALERI -->
 <section class="galeri" id="galeri">
 <h2 class="section-title">📸 Galeri Armada & Layanan</h2>
@@ -802,54 +615,6 @@ Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan j
 </div>
 </section>
 
-<section class="contact" id="kontak">
-
-<h2 class="section-title" style="color:white;">Hubungi Kami</h2>
-
-<p>📱 <strong>WA Utama:</strong> 0856-7643-776</p>
-<p>🚨 <strong>WA Darurat:</strong> 0822-9932-6654</p>
-<p>📍 <strong>Lokasi:</strong> Ciracas, Jakarta Timur</p>
-
-<div class="map-wrap">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.8!2d106.8694!3d-6.3339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjAnMDIuMCJTIDEwNsKwNTInMDkuOCJF!5e0!3m2!1sid!2sid!4v1700000000000" width="100%" height="300" style="border:0;border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-
-<br>
-
-<a href="https://maps.app.goo.gl/5SfYCLvBjqPwB3k98" class="btn">
-📍 Lihat di Google Maps
-</a>
-
-</section>
-
-<!-- LEGAL -->
-<section class="legal">
-<h2 class="section-title" style="color:white;">📋 Legalitas & Kebijakan</h2>
-<div class="legal-grid">
-
-<div>
-<h4>🔖 Legalitas Usaha</h4>
-<ul>
-<li>NIB: [Nomor Induk Berusaha]</li>
-<li>KBLI 86903 — Jasa Pengurusan Jenazah</li>
-<li>NPWP Badan Usaha</li>
-<li>Izin Operasional Daerah</li>
-</ul>
-</div>
-
-<div>
-<h4>🛡️ Kebijakan Privasi</h4>
-<p>EMBALMERS menjaga kerahasiaan data pelanggan. Informasi pribadi (nama, alamat, nomor kontak) hanya digunakan untuk keperluan layanan dan tidak dibagikan ke pihak ketiga tanpa izin tertulis.</p>
-</div>
-
-<div>
-<h4>⚠️ Disclaimer</h4>
-<p>Harga dapat berubah sewaktu-waktu tanpa pemberitahuan. Estimasi waktu tempuh tergantung kondisi lalu lintas. Foto pada galeri merupakan ilustrasi — armada aktual dapat berbeda warna/minor spesifikasi. Penggunaan layanan dianggap menyetujui <a href="#faq">Syarat & Ketentuan</a> kami.</p>
-</div>
-
-</div>
-</section>
-
 <footer>
 © 2026 EMBALMERS — Ambulance & Mortuary Services
 </footer>
@@ -873,24 +638,7 @@ function submitInquiry(){
     'Detail: '+encodeURIComponent(m)+'%0A%0A'+
     'Mohon info ketersediaan dan estimasi biaya. Terima kasih.';
   window.open('https://wa.me/628567643776?text='+txt,'_blank');
-}
-
-// Estimasi Harga
-function hitungEstimasi(){
-  var svc=document.getElementById('est-service').value;
-  var dist=parseInt(document.getElementById('est-distance').value)||0;
-  var result=document.getElementById('est-result');
-  var total=document.getElementById('est-total');
-  var breakdown=document.getElementById('est-breakdown');
-  if(!svc){result.classList.remove('show');return;}
-  var base=parseInt(svc);
-  var kmCost=dist>50?dist*5000:dist*3000;
-  var grand=base+kmCost;
-  total.textContent='Rp'+grand.toLocaleString('id-ID');
-  breakdown.textContent='Biaya dasar Rp'+base.toLocaleString('id-ID')+' + jarak '+dist+' km (Rp'+(dist>50?5000:3000)+'/km) = Rp'+kmCost.toLocaleString('id-ID');
-  result.classList.add('show');
-}
-</script>
+}\n</script>
 
 </body>
 </html>
