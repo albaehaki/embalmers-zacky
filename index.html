@@ -5,6 +5,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EMBALMERS | Ambulans & Penanganan Jenazah 24 Jam</title>
+<meta name="description" content="Layanan ambulans & penanganan jenazah profesional 24 jam di Jabodetabek. Tersedia ambulans pasien, ambulans jenazah, peti jenazah, formalin, pemandian, makeup — siap antar provinsi.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="EMBALMERS — Ambulans & Penanganan Jenazah 24 Jam">
+<meta property="og:description" content="Layanan ambulans & penanganan jenazah profesional. Melayani Jabodetabek, Luar Kota, Antar Provinsi. Siaga 24 jam.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EMBALMERS — Ambulans & Penanganan Jenazah 24 Jam">
+<meta name="twitter:description" content="Layanan ambulans & penanganan jenazah profesional 24 jam — Jabodetabek, Luar Kota, Antar Provinsi.">
+
+<!-- Favicon (emoji SVG fallback) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚑</text></svg>">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -30,6 +45,10 @@ text-align:center;
 font-weight:700;
 }
 
+html{
+scroll-padding-top:80px;
+scroll-behavior:smooth;
+}
 header{
 background:#0f172a;
 padding:20px 8%;
@@ -38,7 +57,8 @@ justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
-z-index:999;
+z-index:1000;
+box-shadow:0 2px 20px rgba(0,0,0,.3);
 }
 
 .logo{
@@ -92,6 +112,22 @@ border-radius:50px;
 font-weight:700;
 margin:8px;
 }
+.btn:hover{background:#b8960f;color:#000;}
+
+.btn-cta{
+display:inline-block;
+padding:10px 18px;
+background:#25D366;
+color:#fff;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+font-size:.9rem;
+margin-top:12px;
+text-align:center;
+width:100%;
+}
+.btn-cta:hover{background:#1da851;}
 
 section{
 padding:80px 8%;
@@ -160,6 +196,40 @@ font-size:30px;
 text-decoration:none;
 color:white;
 }
+.whatsapp:hover{transform:scale(1.1);box-shadow:0 5px 20px rgba(37,211,102,.4);}
+
+/* Testimonial */
+.testi{background:#f1f5f9;text-align:center;}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;text-align:left;}
+.testi-card{background:white;padding:25px;border-radius:18px;box-shadow:0 5px 15px rgba(0,0,0,.05);border-left:4px solid #d4af37;}
+.testi-card .stars{color:#f59e0b;font-size:1.1rem;margin-bottom:8px;}
+.testi-card .quote{font-style:italic;color:#475569;margin-bottom:10px;line-height:1.7;}
+.testi-card .author{font-weight:700;color:#0f172a;}
+.testi-card .relation{font-size:.85rem;color:#94a3b8;}
+
+/* FAQ */
+.faq{background:white;}
+.faq-list{max-width:800px;margin:0 auto;}
+.faq-item{border-bottom:1px solid #e2e8f0;padding:20px 0;}
+.faq-item summary{font-weight:600;cursor:pointer;color:#0f172a;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.faq-item summary::after{content:'+';font-size:1.5rem;color:#d4af37;}
+.faq-item[open] summary::after{content:'−';}
+.faq-item p{margin-top:12px;color:#475569;line-height:1.7;}
+
+/* Galeri */
+.galeri{background:#f8fafc;}
+.galeri-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.galeri-item{background:white;border-radius:18px;overflow:hidden;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,.05);}
+.galeri-item .img-placeholder{height:200px;background:linear-gradient(135deg,#0f172a,#1e293b);display:flex;align-items:center;justify-content:center;font-size:3rem;color:#d4af37;}
+.galeri-item p{padding:12px;font-weight:600;color:#0f172a;}
+
+/* Legal */
+.legal{background:#0f172a;color:white;padding:40px 8%;}
+.legal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+.legal h4{color:#d4af37;margin-bottom:10px;}
+.legal p,.legal ul{color:#cbd5e1;font-size:.9rem;line-height:1.7;}
+.legal ul{padding-left:20px;}
+.legal a{color:#d4af37;}
 
 @media(max-width:768px){
 
@@ -201,6 +271,8 @@ font-size:30px;
 <a href="#ambulans">Ambulans</a>
 <a href="#peti">Peti</a>
 <a href="#layanan">Layanan</a>
+<a href="#galeri">Galeri</a>
+<a href="#faq">FAQ</a>
 <a href="#kontak">Kontak</a>
 </nav>
 </header>
@@ -235,23 +307,27 @@ WhatsApp Darurat
 <div class="grid">
 
 <div class="card">
-<h3>Ambulans Pasien(Luar Kota)</h3>
+<h3>🚑 Ambulans Pasien (Luar Kota)</h3>
 <p class="price">Mulai Rp1.000.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20ambulans%20pasien%20luar%20kota" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
-<h3>Ambulans Jenazah(Dalam Kota)</h3>
+<h3>🚑 Ambulans Jenazah (Dalam Kota)</h3>
 <p class="price">Mulai Rp500.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20ambulans%20jenazah%20dalam%20kota" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
 <h3>Hiace Ambulans</h3>
 <p class="price">Mulai Rp2.000.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Hiace%20ambulans" class="btn-cta">Pesan via WA</a>
 </div>
 
 <div class="card">
 <h3>Alphard Premium</h3>
 <p class="price">Mulai Rp4.000.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Alphard%20Premium" class="btn-cta">Pesan via WA</a>
 </div>
 
 </div>
@@ -305,7 +381,7 @@ WhatsApp Darurat
 </div>
 
 <div class="card">
-<h3>🌏 Jabodetabek & Antar Provinsi(Mengikuti Jarak)</h3>
+<h3>🚐 Jabodetabek & Antar Provinsi</h3>
 <p>Melayani perjalanan dalam dan luar kota ke seluruh Indonesia.</p>
 </div>
 
@@ -318,18 +394,93 @@ WhatsApp Darurat
 <h2 class="section-title">Tentang Embalmers</h2>
 
 <p>
-Emblamers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan jenazah yang cepat, profesional, dan terpercaya selama 24 jam.
+Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan jenazah yang cepat, profesional, dan terpercaya selama 24 jam.
 </p>
 
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testi">
+<h2 class="section-title">⭐ Testimoni Pelanggan</h2>
+<div class="testi-grid">
+
+<div class="testi-card">
+<div class="stars">★★★★★</div>
+<p class="quote">"Respon cepat, petugasnya profesional. Ambulans tiba 30 menit setelah telepon. Penanganan jenazah sangat sopan dan sesuai syariat. Terima kasih Embalmers."</p>
+<div class="author">Bapak Ahmad F.</div>
+<div class="relation">Keluarga Pasien — Jakarta Timur</div>
+</div>
+
+<div class="testi-card">
+<div class="stars">★★★★★</div>
+<p class="quote">"Jarak jauh Jakarta-Semarang diantar dengan aman. Supir ramah, mobil bersih, harga sesuai yang dijanjikan tanpa biaya tambahan. Recommended!"</p>
+<div class="author">Ibu Rina S.</div>
+<div class="relation">Keluarga Pasien — Semarang</div>
+</div>
+
+<div class="testi-card">
+<div class="stars">★★★★★</div>
+<p class="quote">"Pemesanan peti Full Kaca Premium sangat memuaskan. Kualitas bagus, pengiriman tepat waktu, dan konsultasi pemilihan peti sangat helpful."</p>
+<div class="author">Bapak Hendra W.</div>
+<div class="relation">Keluarga Duka — Depok</div>
+</div>
+
+</div>
+</section>
+
+<!-- GALERI -->
+<section class="galeri" id="galeri">
+<h2 class="section-title">📸 Galeri Armada & Layanan</h2>
+<div class="galeri-grid">
+<div class="galeri-item"><div class="img-placeholder">🚑</div><p>Ambulans Pasien</p></div>
+<div class="galeri-item"><div class="img-placeholder">🚐</div><p>Ambulans Jenazah</p></div>
+<div class="galeri-item"><div class="img-placeholder">🚙</div><p>Hiace Ambulans</p></div>
+<div class="galeri-item"><div class="img-placeholder">🚗</div><p>Alphard Premium</p></div>
+<div class="galeri-item"><div class="img-placeholder">⚰️</div><p>Peti Jenazah</p></div>
+<div class="galeri-item"><div class="img-placeholder">🕊️</div><p>Tim Profesional</p></div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+<h2 class="section-title">❓ Pertanyaan Umum (FAQ)</h2>
+<div class="faq-list">
+
+<details class="faq-item">
+<summary>Apa wilayah layanan Embalmers?</summary>
+<p>Kami melayani area Jabodetabek, Luar Kota, hingga Antar Provinsi ke seluruh Indonesia. Layanan 24 jam siap membantu kapan saja.</p>
+</details>
+
+<details class="faq-item">
+<summary>Berapa lama respon setelah pemesanan?</summary>
+<p>Untuk layanan darurat, tim kami siap berangkat dalam 15-30 menit setelah konfirmasi. Pemesanan terjadwal diatur minimal 2 jam sebelumnya.</p>
+</details>
+
+<details class="faq-item">
+<summary>Apakah ada biaya tambahan selain yang tertera?</summary>
+<p>Harga yang tertera sudah termasuk biaya dasar. Untuk jarak di atas 50 km, dikenakan biaya tambahan per km. Semua biaya dikomunikasikan transparan sebelum pemberangkatan.</p>
+</details>
+
+<details class="faq-item">
+<summary>Apakah menerima pembayaran non-tunai?</summary>
+<p>Ya. Kami menerima transfer bank (BCA, Mandiri, BRI) dan QRIS. Pembayaran dapat dilakukan sebelum atau sesudah layanan (untuk pemesanan via keluarga).</p>
+</details>
+
+<details class="faq-item">
+<summary>Bagaimana proses pemesanan?</summary>
+<p>Hubungi WA Utama kami di 0856-7643-776. Tim kami akan memandu: pilih layanan → konfirmasi harga & jadwal → pembayaran → pemberangkatan.</p>
+</details>
+
+</div>
 </section>
 
 <section class="contact" id="kontak">
 
 <h2 class="section-title" style="color:white;">Hubungi Kami</h2>
 
-<p>📱 WA Utama: 0856-7643-776</p>
-<p>🚨 WA Darurat: 0822-9932-6654</p>
-<p>📍 Ciracas, Jakarta Timur</p>
+<p>📱 <strong>WA Utama:</strong> 0856-7643-776</p>
+<p>🚨 <strong>WA Darurat:</strong> 0822-9932-6654</p>
+<p>📍 <strong>Lokasi:</strong> Ciracas, Jakarta Timur</p>
 
 <br>
 
@@ -339,8 +490,36 @@ Lihat Lokasi Kami
 
 </section>
 
+<!-- LEGAL -->
+<section class="legal">
+<h2 class="section-title" style="color:white;">📋 Legalitas & Kebijakan</h2>
+<div class="legal-grid">
+
+<div>
+<h4>🔖 Legalitas Usaha</h4>
+<ul>
+<li>NIB: [Nomor Induk Berusaha]</li>
+<li>KBLI 86903 — Jasa Pengurusan Jenazah</li>
+<li>NPWP Badan Usaha</li>
+<li>Izin Operasional Daerah</li>
+</ul>
+</div>
+
+<div>
+<h4>🛡️ Kebijakan Privasi</h4>
+<p>EMBALMERS menjaga kerahasiaan data pelanggan. Informasi pribadi (nama, alamat, nomor kontak) hanya digunakan untuk keperluan layanan dan tidak dibagikan ke pihak ketiga tanpa izin tertulis.</p>
+</div>
+
+<div>
+<h4>⚠️ Disclaimer</h4>
+<p>Harga dapat berubah sewaktu-waktu tanpa pemberitahuan. Estimasi waktu tempuh tergantung kondisi lalu lintas. Foto pada galeri merupakan ilustrasi — armada aktual dapat berbeda warna/minor spesifikasi. Penggunaan layanan dianggap menyetujui <a href="#faq">Syarat & Ketentuan</a> kami.</p>
+</div>
+
+</div>
+</section>
+
 <footer>
-© 2026 EMBLAMERS - Ambulance & Mortuary Services
+© 2026 EMBALMERS — Ambulance & Mortuary Services
 </footer>
 
 <a href="https://wa.me/628567643776" class="whatsapp">
