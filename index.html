@@ -277,25 +277,27 @@ color:white;
 .whatsapp:hover{transform:scale(1.1);box-shadow:0 5px 20px rgba(37,211,102,.4);}
 
 /* Cards */
-.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:1px solid #f1f5f9;}
+.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:1px solid #f1f5f9;display:flex;flex-direction:column;}
 .card:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(0,0,0,.12);border-color:#d4af37;}
-.card-thumb{height:170px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;position:relative;}
+.card-thumb{height:200px;display:flex;align-items:center;justify-content:center;position:relative;background:#f8fafc;overflow:hidden;}
+.card-thumb img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .5s ease;}
+.card:hover .card-thumb img{transform:scale(1.08);}
 .card-thumb::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#d4af37,transparent);}
-.card-thumb.a1{background:linear-gradient(135deg,#1e3a5f,#2d5a87);}
-.card-thumb.a2{background:linear-gradient(135deg,#2d5a87,#1e3a5f);}
+.card-thumb.a1{background:linear-gradient(135deg,#0f172a,#1e3a5f);}
+.card-thumb.a2{background:linear-gradient(135deg,#0f172a,#1e3a5f);}
 .card-thumb.a3{background:linear-gradient(135deg,#0f172a,#334155);}
 .card-thumb.a4{background:linear-gradient(135deg,#1a1a2e,#16213e);}
-.card-thumb.p1{background:linear-gradient(135deg,#3e2723,#5d4037);}
-.card-thumb.p2{background:linear-gradient(135deg,#5d4037,#3e2723);}
-.card-thumb.p3{background:linear-gradient(135deg,#1b0000,#3e0000);}
+.card-thumb.p1{background:linear-gradient(135deg,#1e293b,#0f172a);}
+.card-thumb.p2{background:linear-gradient(135deg,#1e293b,#0f172a);}
+.card-thumb.p3{background:linear-gradient(135deg,#1e293b,#0f172a);}
 .card-thumb.l1{background:linear-gradient(135deg,#1a3a2a,#2d5a3f);}
 .card-thumb.l2{background:linear-gradient(135deg,#0f172a,#1e3a5f);}
 .card-thumb.l3{background:linear-gradient(135deg,#2a1a3a,#4a2d5a);}
 .card-thumb.l4{background:linear-gradient(135deg,#1a2a3a,#2a4a5a);}
-.card-body{padding:20px;}
-.card-body h3{margin-bottom:8px;font-size:1rem;}
+.card-body{padding:20px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.card-body h3{margin-bottom:8px;font-size:1.05rem;}
 .price{font-weight:700;color:#d4af37;margin-bottom:12px;}
-.btn-cta{display:inline-block;background:#0f172a;color:#d4af37;padding:10px 22px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;}
+.btn-cta{display:inline-block;background:#0f172a;color:#d4af37;padding:10px 22px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;text-align:center;}
 .btn-cta:hover{background:#d4af37;color:#000;}
 
 /* Testimonial */
@@ -316,12 +318,60 @@ color:white;
 .faq-item[open] summary::after{content:'−';}
 .faq-item p{margin-top:12px;color:#475569;line-height:1.7;}
 
-/* Galeri */
-.galeri{background:#f8fafc;}
-.galeri-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.galeri-item{background:white;border-radius:18px;overflow:hidden;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,.05);}
-.galeri-item .img-placeholder{height:200px;background:linear-gradient(135deg,#0f172a,#1e293b);display:flex;align-items:center;justify-content:center;font-size:3rem;color:#d4af37;}
-.galeri-item p{padding:12px;font-weight:600;color:#0f172a;}
+/* Galeri Slider & Filter Tabs */
+.galeri{background:#f8fafc;padding:80px 8%;position:relative;}
+.galeri-filter-wrapper{display:flex;justify-content:center;gap:12px;margin-bottom:30px;flex-wrap:wrap;}
+.filter-btn{background:white;border:2px solid #e2e8f0;color:#0f172a;padding:10px 24px;border-radius:50px;font-weight:600;cursor:pointer;transition:all .3s ease;font-size:.95rem;}
+.filter-btn:hover,.filter-btn.active{background:#0f172a;color:#d4af37;border-color:#0f172a;box-shadow:0 4px 15px rgba(15,23,42,.15);}
+
+.slider-container-wrap{position:relative;width:100%;max-width:1200px;margin:0 auto;}
+.galeri-slider{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 5px 25px 5px;-webkit-overflow-scrolling:touch;}
+.galeri-slider::-webkit-scrollbar{height:8px;}
+.galeri-slider::-webkit-scrollbar-track{background:#e2e8f0;border-radius:10px;}
+.galeri-slider::-webkit-scrollbar-thumb{background:#d4af37;border-radius:10px;}
+
+.galeri-card{flex:0 0 calc(33.333% - 16px);min-width:280px;scroll-snap-align:start;background:white;border-radius:20px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.06);border:1px solid #e2e8f0;transition:transform .3s ease,box-shadow .3s ease,opacity .3s ease;display:flex;flex-direction:column;cursor:pointer;}
+.galeri-card:hover{transform:translateY(-6px);box-shadow:0 15px 35px rgba(0,0,0,.12);border-color:#d4af37;}
+.galeri-card.hidden{display:none !important;}
+
+.galeri-card-img-wrap{height:220px;background:#0f172a;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;}
+.galeri-card-img-wrap img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .5s ease;}
+.galeri-card:hover .galeri-card-img-wrap img{transform:scale(1.08);}
+
+.galeri-badge{position:absolute;top:12px;left:12px;background:rgba(15,23,42,.85);backdrop-filter:blur(4px);color:#d4af37;padding:5px 14px;border-radius:50px;font-size:.75rem;font-weight:700;border:1px solid rgba(212,175,55,.4);}
+
+.galeri-card-body{padding:20px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.galeri-card-body h4{font-size:1.1rem;color:#0f172a;margin-bottom:6px;font-weight:700;}
+.galeri-card-body p{font-size:.88rem;color:#64748b;margin-bottom:15px;line-height:1.5;}
+.galeri-card-footer{display:flex;align-items:center;justify-content:space-between;}
+.btn-view-item{background:#0f172a;color:#d4af37;padding:8px 18px;border-radius:50px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .3s;}
+.btn-view-item:hover{background:#d4af37;color:#000;}
+
+/* Slider Controls */
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:#0f172a;color:#d4af37;border:2px solid #d4af37;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;cursor:pointer;z-index:10;box-shadow:0 5px 15px rgba(0,0,0,.3);transition:all .3s;}
+.slider-arrow:hover{background:#d4af37;color:#000;transform:translateY(-50%) scale(1.1);}
+.slider-arrow.prev{left:-24px;}
+.slider-arrow.next{right:-24px;}
+
+/* Lightbox Modal */
+.lightbox-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,.92);backdrop-filter:blur(8px);z-index:2000;align-items:center;justify-content:center;padding:20px;}
+.lightbox-modal.active{display:flex;}
+.lightbox-content{background:white;border-radius:20px;max-width:700px;width:100%;overflow:hidden;position:relative;box-shadow:0 25px 50px rgba(0,0,0,.4);animation:modalFade .3s ease;}
+@keyframes modalFade{from{opacity:0;transform:scale(.95);}to{opacity:1;transform:scale(1);}}
+.lightbox-close{position:absolute;top:15px;right:20px;font-size:2rem;color:#64748b;cursor:pointer;line-height:1;z-index:10;}
+.lightbox-close:hover{color:#0f172a;}
+.lightbox-img-wrap{background:#0f172a;text-align:center;padding:20px;}
+.lightbox-img-wrap img{max-height:55vh;max-width:100%;object-fit:contain;}
+.lightbox-info{padding:25px;}
+.lightbox-info h3{color:#0f172a;font-size:1.3rem;margin-bottom:8px;font-weight:700;}
+.lightbox-info p{color:#64748b;font-size:.95rem;margin-bottom:20px;line-height:1.6;}
+
+@media(max-width:768px){
+  .galeri-card{flex:0 0 calc(85% - 10px);min-width:250px;}
+  .slider-arrow{display:none;}
+  .slider-arrow.prev{left:5px;}
+  .slider-arrow.next{right:5px;}
+}
 
 /* Form Inquiry */
 .inquiry{background:white;text-align:center;}
@@ -436,7 +486,7 @@ WhatsApp Darurat
 <div class="grid">
 
 <div class="card">
-<div class="card-thumb a1">🚑</div>
+<div class="card-thumb a1"><img src="images/ambulans-emergency-apv.png" alt="Ambulans Pasien Emergency Suzuki APV"></div>
 <div class="card-body">
 <h3><a href="ambulans-pasien/" style="color:inherit;text-decoration:none;">Ambulans Pasien (Luar Kota)</a></h3>
 <p class="price">Mulai Rp1.000.000</p>
@@ -444,7 +494,7 @@ WhatsApp Darurat
 </div></div>
 
 <div class="card">
-<div class="card-thumb a2">🚑</div>
+<div class="card-thumb a2"><img src="images/ambulans-jenazah-apv.jpg" alt="Ambulans Jenazah Suzuki APV Black"></div>
 <div class="card-body">
 <h3><a href="ambulans-jenazah/" style="color:inherit;text-decoration:none;">Ambulans Jenazah (Dalam Kota)</a></h3>
 <p class="price">Mulai Rp500.000</p>
@@ -452,7 +502,7 @@ WhatsApp Darurat
 </div></div>
 
 <div class="card">
-<div class="card-thumb a3">🚐</div>
+<div class="card-thumb a3"><img src="images/hiace-ambulans-pool.jpg" alt="Toyota Hiace Ambulans"></div>
 <div class="card-body">
 <h3><a href="hiace-ambulans/" style="color:inherit;text-decoration:none;">Hiace Ambulans</a></h3>
 <p class="price">Mulai Rp2.000.000</p>
@@ -502,7 +552,7 @@ WhatsApp Darurat
 </div></div>
 
 <div class="card">
-<div class="card-thumb l4">🚐</div>
+<div class="card-thumb l4"><img src="images/interior-ambulans-medis.jpg" alt="Perawatan & Pengawalan Antar Provinsi"></div>
 <div class="card-body">
 <h3>Jabodetabek & Antar Provinsi</h3>
 <p>Melayani perjalanan dalam dan luar kota ke seluruh Indonesia.</p>
@@ -520,27 +570,43 @@ WhatsApp Darurat
 <div class="grid">
 
 <div class="card">
-<div class="card-thumb p1">⚰️</div>
+<div class="card-thumb p1"><img src="images/peti-gunung-standar.png" alt="Peti Gunung Standar Flat Top"></div>
 <div class="card-body">
-<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Gunung</a></h3>
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Gunung Standar</a></h3>
 <p class="price">Rp1.700.000</p>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung" class="btn-cta">Pesan via WA</a>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung%20Standar" class="btn-cta">Pesan via WA</a>
 </div></div>
 
 <div class="card">
-<div class="card-thumb p2">⚰️</div>
+<div class="card-thumb p2"><img src="images/peti-gunung-trap.png" alt="Peti Gunung Trap Bertingkat"></div>
 <div class="card-body">
-<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Jumbo</a></h3>
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Gunung Trap</a></h3>
 <p class="price">Rp2.500.000</p>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Jumbo" class="btn-cta">Pesan via WA</a>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung%20Trap" class="btn-cta">Pesan via WA</a>
 </div></div>
 
 <div class="card">
-<div class="card-thumb p3">🪦</div>
+<div class="card-thumb p2"><img src="images/peti-cokelat-pelitur.png" alt="Peti Kayu Cokelat Pelitur Glossy"></div>
 <div class="card-body">
-<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Full Kaca Premium</a></h3>
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Cokelat Pelitur</a></h3>
+<p class="price">Rp2.200.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Cokelat%20Pelitur" class="btn-cta">Pesan via WA</a>
+</div></div>
+
+<div class="card">
+<div class="card-thumb p3"><img src="images/peti-perjamuan-kaca-terbuka.png" alt="Peti Perjamuan Full Kaca Terbuka"></div>
+<div class="card-body">
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Perjamuan Full Kaca</a></h3>
 <p class="price">Rp6.000.000</p>
-<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Full%20Kaca%20Premium" class="btn-cta">Pesan via WA</a>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Perjamuan%20Full%20Kaca" class="btn-cta">Pesan via WA</a>
+</div></div>
+
+<div class="card">
+<div class="card-thumb p3"><img src="images/peti-perjamuan-premium.png" alt="Peti Perjamuan Premium Relief Emas"></div>
+<div class="card-body">
+<h3><a href="peti-jenazah/" style="color:inherit;text-decoration:none;">Peti Perjamuan Premium</a></h3>
+<p class="price">Rp6.000.000</p>
+<a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Perjamuan%20Premium" class="btn-cta">Pesan via WA</a>
 </div></div>
 
 </div>
@@ -589,18 +655,213 @@ Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan j
 </div>
 </section>
 
-<!-- GALERI -->
+<!-- GALERI SLIDER -->
 <section class="galeri" id="galeri">
-<h2 class="section-title">📸 Galeri Armada & Layanan</h2>
-<div class="galeri-grid">
-<div class="galeri-item"><div class="img-placeholder">🚑</div><p>Ambulans Pasien</p></div>
-<div class="galeri-item"><div class="img-placeholder">🚐</div><p>Ambulans Jenazah</p></div>
-<div class="galeri-item"><div class="img-placeholder">🚙</div><p>Hiace Ambulans</p></div>
-<div class="galeri-item"><div class="img-placeholder">🚗</div><p>Alphard Premium</p></div>
-<div class="galeri-item"><div class="img-placeholder">⚰️</div><p>Peti Jenazah</p></div>
-<div class="galeri-item"><div class="img-placeholder">🕊️</div><p>Tim Profesional</p></div>
+<h2 class="section-title">📸 Galeri Armada & Peti Jenazah</h2>
+
+<!-- Filter Category Buttons -->
+<div class="galeri-filter-wrapper">
+  <button class="filter-btn active" onclick="filterGaleri('all', this)">✨ Semua</button>
+  <button class="filter-btn" onclick="filterGaleri('ambulans', this)">🚑 Armada Ambulans</button>
+  <button class="filter-btn" onclick="filterGaleri('peti', this)">⚰️ Peti Jenazah</button>
+</div>
+
+<!-- Slider Container with Arrow Controls -->
+<div class="slider-container-wrap">
+  <button class="slider-arrow prev" onclick="scrollGaleri(-1)">‹</button>
+
+  <div class="galeri-slider" id="galeriSlider">
+
+    <!-- Card 1: Ambulans Emergency APV -->
+    <div class="galeri-card" data-category="ambulans" onclick="openLightbox('images/ambulans-emergency-apv.png', 'Ambulans Emergency APV Red-Black', 'Armada Siaga 24 Jam • Red-Black Dual Tone • Lengkap Sirine & Strobo LED. Siap melayani pasien rujukan & penanganan darurat Jabodetabek maupun Luar Kota.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">🚑 Ambulans</span>
+        <img src="images/ambulans-emergency-apv.png" alt="Ambulans Emergency APV">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Ambulans Emergency APV</h4>
+          <p>Red-Black Dual Tone • Siaga 24 Jam • Lengkap Sirine & Strobo LED</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Ambulans Jenazah APV Black -->
+    <div class="galeri-card" data-category="ambulans" onclick="openLightbox('images/ambulans-jenazah-apv.jpg', 'Ambulans Jenazah Standar APV Black', 'Armada Khusus Jenazah • Solid Black • Keranda Stainless Steel & AC Dingin. Melayani pengantaran jenazah dalam kota & luar kota antar provinsi.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">🚑 Ambulans</span>
+        <img src="images/ambulans-jenazah-apv.jpg" alt="Ambulans Jenazah Suzuki APV Black">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Ambulans Jenazah Standar</h4>
+          <p>Solid Black • Keranda Stainless • Jabodetabek & Antar Provinsi</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Peti Gunung Standar -->
+    <div class="galeri-card" data-category="peti" onclick="openLightbox('images/peti-gunung-standar.png', 'Peti Gunung Standar (Flat Top)', 'Rp1.700.000 • Model tutupan datar (Flat Top) kayu solid putih polos. Dilengkapi ornamen lukisan Perjamuan Terakhir (The Last Supper) & Salib Merah.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">⚰️ Peti Jenazah</span>
+        <img src="images/peti-gunung-standar.png" alt="Peti Gunung Standar Flat Top">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Peti Gunung Standar</h4>
+          <p>Flat Top • Lukisan Perjamuan Terakhir & Salib Merah (Rp1.700.000)</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Peti Gunung Trap -->
+    <div class="galeri-card" data-category="peti" onclick="openLightbox('images/peti-gunung-trap.png', 'Peti Gunung Trap (Bertingkat)', 'Rp2.500.000 • Model tutupan bertingkat (Trap 2) kayu solid putih dengan pilar sudut elegan, lukisan Perjamuan Terakhir, dan Salib Emas.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">⚰️ Peti Jenazah</span>
+        <img src="images/peti-gunung-trap.png" alt="Peti Gunung Trap Bertingkat">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Peti Gunung Trap</h4>
+          <p>Tutupan Bertingkat • Ukiran Pilar & Salib Emas (Rp2.500.000)</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Peti Perjamuan Premium -->
+    <div class="galeri-card" data-category="peti" onclick="openLightbox('images/peti-perjamuan-premium.png', 'Peti Perjamuan Premium Relief Emas', 'Rp6.000.000 • Peti Ukir Mewah dengan lis relief warna emas melingkar, pegangan emas (Gold Handles), patung salib atas, lukisan Perjamuan Terakhir & Medali Kristus.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">⚰️ Peti Jenazah</span>
+        <img src="images/peti-perjamuan-premium.png" alt="Peti Perjamuan Premium Relief Emas">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Peti Perjamuan Premium</h4>
+          <p>Relief Ukir Emas • Gold Handles & Patung Salib (Rp6.000.000)</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 6: Peti Cokelat Pelitur -->
+    <div class="galeri-card" data-category="peti" onclick="openLightbox('images/peti-cokelat-pelitur.png', 'Peti Kayu Cokelat Pelitur Glossy', 'Rp2.200.000 • Kayu Solid pilihan dengan finishing pelitur cokelat berkilau (Glossy Wood), tutupan bertingkat (Trap), & pilar sudut klasik.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">⚰️ Peti Jenazah</span>
+        <img src="images/peti-cokelat-pelitur.png" alt="Peti Kayu Cokelat Pelitur Glossy">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Peti Kayu Cokelat Pelitur</h4>
+          <p>Finishing Pelitur Cokelat Glossy • Tutup Trap & Pilar (Rp2.200.000)</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 7: Peti Perjamuan Full Kaca Terbuka -->
+    <div class="galeri-card" data-category="peti" onclick="openLightbox('images/peti-perjamuan-kaca-terbuka.png', 'Peti Perjamuan Full Kaca Terbuka', 'Rp6.000.000 • Tipe Premium dengan tutupan panel kaca penuh yang dapat dibuka, lukisan Perjamuan Terakhir di bagian dalam tutup & samping, & lis emas.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">⚰️ Peti Jenazah</span>
+        <img src="images/peti-perjamuan-kaca-terbuka.png" alt="Peti Perjamuan Full Kaca Terbuka">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Peti Perjamuan Full Kaca</h4>
+          <p>Tutup Kaca Terbuka • Lukisan Dalam & Samping (Rp6.000.000)</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 8: Peti Perjamuan Side View -->
+    <div class="galeri-card" data-category="peti" onclick="openLightbox('images/peti-perjamuan-kaca-side.png', 'Peti Perjamuan Medali Kristus', 'Rp6.000.000 • Tampak samping peti perjamuan premium memperlihatkan medali relief Yesus Kristus di bagian depan, lis ukir emas, & gold handles.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">⚰️ Peti Jenazah</span>
+        <img src="images/peti-perjamuan-kaca-side.png" alt="Peti Perjamuan Medali Kristus">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Peti Perjamuan Medali Kristus</h4>
+          <p>Ukiran Emas • Medali Kristus & Gold Handles (Rp6.000.000)</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 9: Toyota Hiace Pool -->
+    <div class="galeri-card" data-category="ambulans" onclick="openLightbox('images/hiace-ambulans-pool.jpg', 'Armada Toyota Hiace & Pool Armada', 'Unit Toyota Hiace Commuter Ambulance (BK 7177 DQ) & Suzuki APV terparkir siaga di Pool Embalmers. Melayani rombongan keluarga 10 orang + jenazah.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">🚑 Ambulans</span>
+        <img src="images/hiace-ambulans-pool.jpg" alt="Toyota Hiace Ambulance Pool">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Armada Toyota Hiace & Pool</h4>
+          <p>Toyota Hiace Commuter • Kapasitas 10 Penumpang + Jenazah</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 10: Interior Medis Ambulans -->
+    <div class="galeri-card" data-category="ambulans" onclick="openLightbox('images/interior-ambulans-medis.jpg', 'Interior Medis & Peralatan Ambulans', 'Fasilitas kabin dalam ambulans medis: Wheeled Stretcher Stainless Steel, Spine Board lipat kuning, Tabung Oksigen, Lemari Alkes, APAR, & Sofa Pendamping.')">
+      <div class="galeri-card-img-wrap">
+        <span class="galeri-badge">🚑 Ambulans</span>
+        <img src="images/interior-ambulans-medis.jpg" alt="Interior Medis Stretcher & Peralatan">
+      </div>
+      <div class="galeri-card-body">
+        <div>
+          <h4>Interior Medis & Stretcher</h4>
+          <p>Tandu Stretcher Stainless • Spine Board • Tabung Oksigen & Alkes</p>
+        </div>
+        <div class="galeri-card-footer">
+          <span class="btn-view-item">🔍 Lihat Detail</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="slider-arrow next" onclick="scrollGaleri(1)">›</button>
 </div>
 </section>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="Detail Gambar">
+    </div>
+    <div class="lightbox-info">
+      <h3 id="lightboxTitle"></h3>
+      <p id="lightboxDesc"></p>
+      <a id="lightboxWaBtn" href="" target="_blank" class="btn btn-wa" style="margin:0;display:inline-block;">💬 Pesan via WhatsApp</a>
+    </div>
+  </div>
+</div>
 
 <!-- FAQ -->
 <section class="faq" id="faq">
@@ -684,7 +945,56 @@ function submitInquiry(){
     'Detail: '+encodeURIComponent(m)+'%0A%0A'+
     'Mohon info ketersediaan dan estimasi biaya. Terima kasih.';
   window.open('https://wa.me/628567643776?text='+txt,'_blank');
-}\n</script>
+}
+
+// Galeri Category Filtering
+function filterGaleri(category, btn){
+  var buttons=document.querySelectorAll('.filter-btn');
+  buttons.forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+
+  var cards=document.querySelectorAll('.galeri-card');
+  cards.forEach(function(card){
+    if(category==='all'||card.getAttribute('data-category')===category){
+      card.classList.remove('hidden');
+    }else{
+      card.classList.add('hidden');
+    }
+  });
+
+  var slider=document.getElementById('galeriSlider');
+  if(slider) slider.scrollLeft=0;
+}
+
+// Galeri Slider Control
+function scrollGaleri(direction){
+  var slider=document.getElementById('galeriSlider');
+  if(!slider) return;
+  var scrollAmount=320;
+  slider.scrollBy({left:direction*scrollAmount,behavior:'smooth'});
+}
+
+// Lightbox Modal Functions
+function openLightbox(imgSrc,title,desc){
+  document.getElementById('lightboxImg').src=imgSrc;
+  document.getElementById('lightboxTitle').innerText=title;
+  document.getElementById('lightboxDesc').innerText=desc;
+  var waText=encodeURIComponent('Halo Embalmers, saya tertarik dengan '+title);
+  document.getElementById('lightboxWaBtn').href='https://wa.me/628567643776?text='+waText;
+  document.getElementById('lightboxModal').classList.add('active');
+}
+
+function closeLightbox(e){
+  document.getElementById('lightboxModal').classList.remove('active');
+}
+
+// Keyboard Close (ESC) for Lightbox
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape'){
+    closeLightbox();
+  }
+});
+</script>
 
 </body>
 </html>

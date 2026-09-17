@@ -64,10 +64,91 @@ footer{background:#020617;color:white;text-align:center;padding:20px;font-size:.
 </div>
 </section>
 
+<style>
+.product-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.08);border:1px solid #e2e8f0;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.14);border-color:#d4af37;}
+.product-img{height:220px;background:#0f172a;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.product-img img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .4s ease;}
+.product-card:hover .product-img img{transform:scale(1.08);}
+.product-body{padding:22px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.product-title{font-size:1.2rem;color:#0f172a;margin-bottom:6px;font-weight:700;}
+.product-price{font-size:1.3rem;color:#d4af37;font-weight:800;margin-bottom:12px;}
+.product-desc{font-size:.9rem;color:#64748b;margin-bottom:16px;line-height:1.5;}
+.btn-order{display:inline-block;background:#25D366;color:white;text-align:center;padding:12px 20px;border-radius:50px;font-weight:700;text-decoration:none;transition:background .3s;}
+.btn-order:hover{background:#1da851;}
+</style>
+
 <section>
-<h2 class="section-title">📋 Spesifikasi & Detail</h2>
+<h2 class="section-title">⚰️ Pilihan Varian Peti Jenazah</h2>
 <div class="grid">
-<div class="spec-card"><div class="spec-icon">🪵</div><div><h4>Bahan</h4><p>Kayu solid pilihan, finishing rapi</p></div></div><div class="spec-card"><div class="spec-icon">📦</div><div><h4>Jenis</h4><p>Gunung / Jumbo / Full Kaca Premium</p></div></div><div class="spec-card"><div class="spec-icon">🚚</div><div><h4>Pengiriman</h4><p>Gratis dalam Jabodetabek</p></div></div><div class="spec-card"><div class="spec-icon">⏱️</div><div><h4>Waktu</h4><p>Ready stock, kirim 1–2 jam setelah konfirmasi</p></div></div><div class="spec-card"><div class="spec-icon">📍</div><div><h4>Wilayah</h4><p>Jabodetabek & kota besar</p></div></div><div class="spec-card"><div class="spec-icon">💳</div><div><h4>Pembayaran</h4><p>Transfer BCA/Mandiri/BRI, QRIS, Tunai</p></div></div>
+
+<div class="product-card">
+  <div class="product-img"><img src="../images/peti-gunung-standar.png" alt="Peti Gunung Standar Flat Top"></div>
+  <div class="product-body">
+    <div>
+      <h3 class="product-title">Peti Gunung Standar</h3>
+      <div class="product-price">Rp1.700.000</div>
+      <p class="product-desc">Model tutupan datar (*Flat Top*) kayu solid putih polos. Dilengkapi ornamen lukisan *Perjamuan Terakhir* (*The Last Supper*) di samping & salib merah.</p>
+    </div>
+    <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung%20Standar%20Rp1.700.000" class="btn-order">💬 Pesan via WhatsApp</a>
+  </div>
+</div>
+
+<div class="product-card">
+  <div class="product-img"><img src="../images/peti-gunung-trap.png" alt="Peti Gunung Trap Bertingkat"></div>
+  <div class="product-body">
+    <div>
+      <h3 class="product-title">Peti Gunung Trap</h3>
+      <div class="product-price">Rp2.500.000</div>
+      <p class="product-desc">Model tutupan bertingkat (*Trap 2*) kayu solid putih dengan pilar sudut elegan, lukisan *Perjamuan Terakhir*, dan salib emas di bagian depan.</p>
+    </div>
+    <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Gunung%20Trap%20Rp2.500.000" class="btn-order">💬 Pesan via WhatsApp</a>
+  </div>
+</div>
+
+<div class="product-card">
+  <div class="product-img"><img src="../images/peti-cokelat-pelitur.png" alt="Peti Kayu Cokelat Pelitur Glossy"></div>
+  <div class="product-body">
+    <div>
+      <h3 class="product-title">Peti Kayu Cokelat Pelitur</h3>
+      <div class="product-price">Rp2.200.000</div>
+      <p class="product-desc">Model kayu solid dengan finishing pelitur cokelat mengkilap (*glossy wood*), tutupan bertingkat (*trap*), dan pilar ukiran sudut bergaya klasik.</p>
+    </div>
+    <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Kayu%20Cokelat%20Pelitur%20Rp2.200.000" class="btn-order">💬 Pesan via WhatsApp</a>
+  </div>
+</div>
+
+<div class="product-card">
+  <div class="product-img"><img src="../images/peti-perjamuan-kaca-terbuka.png" alt="Peti Perjamuan Full Kaca Terbuka"></div>
+  <div class="product-body">
+    <div>
+      <h3 class="product-title">Peti Perjamuan Full Kaca</h3>
+      <div class="product-price">Rp6.000.000</div>
+      <p class="product-desc">Varian mewah dengan panel kaca atas yang dapat dibuka, lukisan *Perjamuan Terakhir* di dalam tutup & sisi luar, lis relief emas, & *gold handles*.</p>
+    </div>
+    <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Perjamuan%20Full%20Kaca%20Rp6.000.000" class="btn-order">💬 Pesan via WhatsApp</a>
+  </div>
+</div>
+
+<div class="product-card">
+  <div class="product-img"><img src="../images/peti-perjamuan-premium.png" alt="Peti Perjamuan Premium Relief Emas"></div>
+  <div class="product-body">
+    <div>
+      <h3 class="product-title">Peti Perjamuan Premium</h3>
+      <div class="product-price">Rp6.000.000</div>
+      <p class="product-desc">Kelas premium dengan lis relief ukir warna emas, gagang logam warna emas (*gold handles*), patung salib atas, lukisan Perjamuan Terakhir & medali Kristus.</p>
+    </div>
+    <a href="https://wa.me/628567643776?text=Halo%20Embalmers,%20saya%20butuh%20Peti%20Perjamuan%20Premium%20Rp6.000.000" class="btn-order">💬 Pesan via WhatsApp</a>
+  </div>
+</div>
+
+</div>
+</section>
+
+<section style="background:white;">
+<h2 class="section-title">📋 Spesifikasi & Fitur</h2>
+<div class="grid">
+<div class="spec-card"><div class="spec-icon">🪵</div><div><h4>Bahan</h4><p>Kayu solid pilihan, finishing rapi</p></div></div><div class="spec-card"><div class="spec-icon">📦</div><div><h4>Jenis</h4><p>Gunung / Trap / Perjamuan Premium</p></div></div><div class="spec-card"><div class="spec-icon">🚚</div><div><h4>Pengiriman</h4><p>Gratis dalam Jabodetabek</p></div></div><div class="spec-card"><div class="spec-icon">⏱️</div><div><h4>Waktu</h4><p>Ready stock, kirim 1–2 jam setelah konfirmasi</p></div></div><div class="spec-card"><div class="spec-icon">📍</div><div><h4>Wilayah</h4><p>Jabodetabek & kota besar</p></div></div><div class="spec-card"><div class="spec-icon">💳</div><div><h4>Pembayaran</h4><p>Transfer BCA/Mandiri/BRI, QRIS, Tunai</p></div></div>
 </div>
 </section>
 

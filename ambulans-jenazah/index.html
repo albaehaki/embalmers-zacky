@@ -64,7 +64,37 @@ footer{background:#020617;color:white;text-align:center;padding:20px;font-size:.
 </div>
 </section>
 
+<style>
+.armada-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:40px;}
+.armada-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,.06);border:1px solid #e2e8f0;transition:transform .3s,box-shadow .3s;}
+.armada-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.12);border-color:#d4af37;}
+.armada-img{height:230px;background:#0f172a;overflow:hidden;}
+.armada-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.armada-card:hover .armada-img img{transform:scale(1.08);}
+.armada-info{padding:18px;}
+.armada-info h3{color:#0f172a;font-size:1.1rem;margin-bottom:6px;}
+.armada-info p{color:#64748b;font-size:.9rem;}
+</style>
+
 <section>
+<h2 class="section-title">🚘 Tampilan Armada Ambulans Jenazah</h2>
+<div class="armada-grid">
+  <div class="armada-card">
+    <div class="armada-img"><img src="../images/ambulans-jenazah-apv.jpg" alt="Suzuki APV Black Ambulans Jenazah"></div>
+    <div class="armada-info">
+      <h3>Suzuki APV Solid Black</h3>
+      <p>Armada khusus jenazah dalam kota & luar kota. Dilengkapi sirine LED, stiker visibilitas, keranda stainless steel, & AC dingin.</p>
+    </div>
+  </div>
+  <div class="armada-card">
+    <div class="armada-img"><img src="../images/ambulans-emergency-apv.png" alt="Suzuki APV Emergency Red Black Ambulans"></div>
+    <div class="armada-info">
+      <h3>Suzuki APV Emergency Dual Tone</h3>
+      <p>Armada siaga cepat 24 jam dengan lampu strobo emergency, sirine multi-suara, dan interior yang terawat hygenis.</p>
+    </div>
+  </div>
+</div>
+
 <h2 class="section-title">📋 Spesifikasi & Detail</h2>
 <div class="grid">
 <div class="spec-card"><div class="spec-icon">🚑</div><div><h4>Jenis</h4><p>Ambulans Jenazah Standar (Dalam Kota)</p></div></div><div class="spec-card"><div class="spec-icon">👨‍✈️</div><div><h4>Supir</h4><p>Berpengalaman & bersertifikat</p></div></div><div class="spec-card"><div class="spec-icon">🛏️</div><div><h4>Perlengkapan</h4><p>Keranda jenazah, seprai, atribut lengkap</p></div></div><div class="spec-card"><div class="spec-icon">⏱️</div><div><h4>Respons</h4><p>15–30 menit setelah konfirmasi</p></div></div><div class="spec-card"><div class="spec-icon">📍</div><div><h4>Wilayah</h4><p>Jakarta, Bogor, Depok, Tangerang, Bekasi</p></div></div><div class="spec-card"><div class="spec-icon">💳</div><div><h4>Pembayaran</h4><p>Transfer BCA/Mandiri/BRI, QRIS, Tunai</p></div></div>
