@@ -300,14 +300,22 @@ color:white;
 .btn-cta{display:inline-block;background:#0f172a;color:#d4af37;padding:10px 22px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;text-align:center;}
 .btn-cta:hover{background:#d4af37;color:#000;}
 
-/* Testimonial */
-.testi{background:#f1f5f9;text-align:center;}
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;text-align:left;}
-.testi-card{background:white;padding:25px;border-radius:18px;box-shadow:0 5px 15px rgba(0,0,0,.05);border-left:4px solid #d4af37;}
-.testi-card .stars{color:#f59e0b;font-size:1.1rem;margin-bottom:8px;}
-.testi-card .quote{font-style:italic;color:#475569;margin-bottom:10px;line-height:1.7;}
+/* Testimonial Slider */
+.testi{background:#f1f5f9;text-align:center;position:relative;}
+.testi-slider{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:10px 5px 25px 5px;-webkit-overflow-scrolling:touch;}
+.testi-slider::-webkit-scrollbar{height:8px;}
+.testi-slider::-webkit-scrollbar-track{background:#e2e8f0;border-radius:10px;}
+.testi-slider::-webkit-scrollbar-thumb{background:#d4af37;border-radius:10px;}
+
+.testi-card{flex:0 0 calc(33.333% - 16px);min-width:280px;scroll-snap-align:start;background:white;padding:25px;border-radius:18px;box-shadow:0 5px 15px rgba(0,0,0,.05);border-left:4px solid #d4af37;text-align:left;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s ease,box-shadow .3s ease;}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(0,0,0,.08);}
+.testi-rating{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+.testi-stars{color:#f59e0b;letter-spacing:2px;font-size:1rem;}
+.testi-badge{background:#f8fafc;color:#64748b;font-size:.75rem;padding:3px 8px;border-radius:6px;border:1px solid #e2e8f0;font-weight:600;}
+.testi-card .quote{font-style:italic;color:#475569;margin-bottom:15px;line-height:1.7;flex:1;}
 .testi-card .author{font-weight:700;color:#0f172a;}
 .testi-card .relation{font-size:.85rem;color:#94a3b8;}
+
 
 
 /* Galeri Slider & Filter Tabs */
@@ -359,7 +367,7 @@ color:white;
 .lightbox-info p{color:#64748b;font-size:.95rem;margin-bottom:20px;line-height:1.6;}
 
 @media(max-width:768px){
-  .galeri-card{flex:0 0 calc(85% - 10px);min-width:250px;}
+  .galeri-card,.testi-card{flex:0 0 calc(85% - 10px);min-width:250px;}
   .slider-arrow{display:none;}
   .slider-arrow.prev{left:5px;}
   .slider-arrow.next{right:5px;}
@@ -614,35 +622,118 @@ Embalmers hadir untuk membantu keluarga dengan layanan ambulans dan penanganan j
 
 </section>
 
-<!-- TESTIMONIAL -->
+<!-- TESTIMONIAL SLIDER -->
 <section class="testi">
 <h2 class="section-title">⭐ Testimoni Pelanggan</h2>
-<div class="testi-grid">
 
-<div class="testi-card">
-<div class="avatar a1">AF</div>
-<div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
-<p class="quote">"Respon cepat, petugasnya profesional. Ambulans tiba 30 menit setelah telepon. Penanganan jenazah sangat sopan dan sesuai syariat."</p>
-<div class="author">Bapak Ahmad F.</div>
-<div class="relation">Keluarga Pasien — Jakarta Timur</div>
-</div>
+<div class="slider-container-wrap">
+  <button class="slider-arrow prev" onclick="scrollTesti(-1)">‹</button>
 
-<div class="testi-card">
-<div class="avatar a2">RS</div>
-<div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
-<p class="quote">"Jarak jauh Jakarta-Semarang diantar aman. Supir ramah, mobil bersih, harga sesuai tanpa biaya tambahan. Recommended!"</p>
-<div class="author">Ibu Rina S.</div>
-<div class="relation">Keluarga Pasien — Semarang</div>
-</div>
+  <div class="testi-slider" id="testiSlider">
 
-<div class="testi-card">
-<div class="avatar a3">HW</div>
-<div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
-<p class="quote">"Pemesanan peti Full Kaca Premium sangat memuaskan. Kualitas bagus, pengiriman tepat waktu, konsultasi helpful."</p>
-<div class="author">Bapak Hendra W.</div>
-<div class="relation">Keluarga Duka — Depok</div>
-</div>
+    <!-- Card 1 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Respon cepat, petugasnya profesional. Ambulans tiba 30 menit setelah telepon. Penanganan jenazah sangat sopan dan sesuai syariat."</p>
+      <div>
+        <div class="author">Bapak Ahmad F.</div>
+        <div class="relation">Keluarga Pasien — Jakarta Timur</div>
+      </div>
+    </div>
 
+    <!-- Card 2 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Jarak jauh Jakarta-Semarang diantar aman. Supir ramah, mobil bersih, harga sesuai tanpa biaya tambahan. Recommended!"</p>
+      <div>
+        <div class="author">Ibu Rina S.</div>
+        <div class="relation">Keluarga Pasien — Semarang</div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Pemesanan peti Full Kaca Premium sangat memuaskan. Kualitas bagus, pengiriman tepat waktu, konsultasi helpful."</p>
+      <div>
+        <div class="author">Bapak Hendra W.</div>
+        <div class="relation">Keluarga Duka — Depok</div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Layanan pengawetan & embalming jenazah sangat rapi dan profesional. Tim Embalmers sangat berempati di masa duka keluarga kami."</p>
+      <div>
+        <div class="author">Ibu Maria K.</div>
+        <div class="relation">Keluarga Duka — Bandung</div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Pengantaran jenazah rute darat Jakarta ke Surabaya sangat lancar. Armada Hiace bersih, AC dingin, keluarga yang mendampingi tenang."</p>
+      <div>
+        <div class="author">Bapak Gunawan T.</div>
+        <div class="relation">Keluarga Duka — Surabaya</div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Sering koordinasi untuk penanganan & pemulasaran jenazah pasien. Pelayanan 24 jam selalu siaga, tanggap, dan sangat profesional."</p>
+      <div>
+        <div class="author">Dr. Dewi N.</div>
+        <div class="relation">Mitra Medis — Bekasi</div>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Paket duka lengkap dan transparan. Dari penanganan awal, peti jenazah, sampai antar ke pemakaman diurus dengan sangat baik."</p>
+      <div>
+        <div class="author">Bapak Budi Santoso</div>
+        <div class="relation">Keluarga Pasien — Tangerang</div>
+      </div>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Sewa ambulans Alphard VIP untuk pemakaman almarhum ayahanda. Pelayanan kelas atas, armada sangat bersih, elegan, & terhormat."</p>
+      <div>
+        <div class="author">Ibu Stephanie L.</div>
+        <div class="relation">Keluarga Duka — Jakarta Selatan</div>
+      </div>
+    </div>
+
+    <!-- Card 9 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Proses pemulasaran dan peti ukir Perjamuan sangat memuaskan. Ukiran halus dan pengiriman tiba tepat waktu sesuai jadwal duka."</p>
+      <div>
+        <div class="author">Bapak David Pratama</div>
+        <div class="relation">Keluarga Duka — Bogor</div>
+      </div>
+    </div>
+
+    <!-- Card 10 -->
+    <div class="testi-card">
+      <div class="testi-rating"><span class="testi-stars">★★★★★</span><span class="testi-badge">Google Review</span></div>
+      <p class="quote">"Alhamdulillah dibantu dari proses mandi, kafan, hingga pengantaran jenazah ke Purwokerto. Petugas sangat amanah dan santun."</p>
+      <div>
+        <div class="author">Hj. Fatimah</div>
+        <div class="relation">Keluarga Duka — Jakarta Barat</div>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="slider-arrow next" onclick="scrollTesti(1)">›</button>
 </div>
 </section>
 
@@ -948,6 +1039,14 @@ function scrollGaleri(direction){
   var slider=document.getElementById('galeriSlider');
   if(!slider) return;
   var scrollAmount=320;
+  slider.scrollBy({left:direction*scrollAmount,behavior:'smooth'});
+}
+
+// Testimonial Slider Control
+function scrollTesti(direction){
+  var slider=document.getElementById('testiSlider');
+  if(!slider) return;
+  var scrollAmount=340;
   slider.scrollBy({left:direction*scrollAmount,behavior:'smooth'});
 }
 
